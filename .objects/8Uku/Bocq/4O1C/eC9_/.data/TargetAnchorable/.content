@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="o-szMhB-Uk-E7JEpyBRGTA" DesignTimeRectangle="1410, 423, 78, 30" ElementType="Text" FriendlyName="'12/30/21'" FullSelectorArgument="&lt;webctrl aaname='12/30/21' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='*' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="fd8da3bb-246c-4bc3-bd9a-2e2099195e8b" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="1364, 393, 172, 30" ElementType="Text" FriendlyName="'Thu'" FullSelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Thu' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1vb5yj6xh0kCZdnePWItdEw</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0xWvl2wefHEKAVUuFiZ2CuA</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="283aa96d6f65fdea30b31b483721403d.png" xmlns="">04h1GV_Z0ckyeg7qC8x-Cvg</imageRef>
+</TargetAnchorable>

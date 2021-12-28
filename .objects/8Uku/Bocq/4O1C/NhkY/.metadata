@@ -1,0 +1,13 @@
+﻿{
+  "Id": "NhkYFebTjUebUVzT2nQ50g",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/NhkYFebTjUebUVzT2nQ50g",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/4O1CxtV19k-hBwZxi_nibA",
+  "Name": "Friday",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2021-12-28T18:02:21.8105148Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-12-28T18:02:21.8105148Z"
+}

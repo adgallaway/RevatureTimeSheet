@@ -1,0 +1,13 @@
+﻿{
+  "Id": "srwYqjYyukKsJgggaLf7gg",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/srwYqjYyukKsJgggaLf7gg",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/4O1CxtV19k-hBwZxi_nibA",
+  "Name": "Wed Date",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2021-12-28T18:02:22.0282391Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-12-28T18:02:22.0282391Z"
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Id": "740gTE16xkyVYgU9-wW0RQ",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/740gTE16xkyVYgU9-wW0RQ",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/4O1CxtV19k-hBwZxi_nibA",
+  "Name": "Tue Date",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2021-12-28T18:02:21.9563056Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-12-28T18:02:21.9563056Z"
+}

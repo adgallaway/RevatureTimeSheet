@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/login/" ContentHash="es1lz3Vrl0KC1oGUy-xM-w" DesignTimeRectangle="323, 605, 367, 54" ElementType="InputBoxPassword" FriendlyName="'INPUT 47:2;a'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' aaname='Password' /&gt;" Guid="bb0f1c7a-5073-4189-a317-f5c76278ad03" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0BqWUKypRgEaCUVRTkVerdQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="bba4e6ebacd80e0b971873ca3b1f9393.png" xmlns="">0TjVj7Q7dcEaU8JAmrIlw0Q</imageRef>
+</TargetAnchorable>

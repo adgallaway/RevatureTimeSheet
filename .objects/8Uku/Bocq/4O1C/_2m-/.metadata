@@ -1,0 +1,13 @@
+﻿{
+  "Id": "_2m-HTw2sk-Uuywun_q13A",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/_2m-HTw2sk-Uuywun_q13A",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/4O1CxtV19k-hBwZxi_nibA",
+  "Name": "Logout",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2021-12-28T18:03:45.0796404Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-12-28T18:03:45.0796404Z"
+}
