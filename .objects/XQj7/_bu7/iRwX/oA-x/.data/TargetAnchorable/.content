@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/" ContentHash="E3eMzBpW-0K9U1e3MawR_Q" DesignTimeRectangle="1235, 740, 61, 32" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' aaname='Save' check:text='Save' /&gt;" Guid="c0e552a6-c422-4fb0-8996-61f49edff984" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0_ZhJVkADsEqe2-VeJCRfLQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="642be9c7c0e4a656eccc0da195d9fc23.png" xmlns="">0X7hpKhxMbUe-KcYlj3xiYg</imageRef>
+</TargetAnchorable>

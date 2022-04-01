@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/" ContentHash="sxWOcZ0n1k6XyVlqZqnV7w" DesignTimeRectangle="574, 178, 14, 14" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraIf/lightningButtonIcon/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraIf/lightningButtonIcon/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='svg' type='' aaname='' /&gt;" Guid="29cab65f-a438-49d9-8bad-2cf376fe6ca4" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="313, 169, 292, 32" ElementType="Container" FriendlyName="'TimesheetsOpen Current'" FullSelectorArgument="&lt;webctrl idx='2' sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraHtml' tag='HEADER' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraHtml' tag='HEADER' aaname='' check:text='TimesheetsOpen Current Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1wGRv-hJDVkidB-fJeAebUw</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0d5yhhYDBnUCN7CjhwJmr3g</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="c8b7bec38ef0380ff8a18cf4c804cd99.png" xmlns="">0WZDZD5TQZk6LXvVbhLHNGw</imageRef>
+</TargetAnchorable>

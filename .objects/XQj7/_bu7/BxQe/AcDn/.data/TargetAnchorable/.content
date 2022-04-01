@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="cwKiMilxgkuVt53rFpaRCQ" DesignTimeRectangle="1604, 428, 35, 23" ElementType="Text" FriendlyName="'40.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' type='' aaname='40.00' /&gt;" Guid="08c57343-7377-48f5-bf99-cdaa7c687d71" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="325, 421, 1259, 37" ElementType="Text" FriendlyName="'Total Hours'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='TD' type='' aaname='Total Hours:' check:text='Total Hours:' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">15UoNz55R0ESM8cDDx2w1uA</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0G7fh5AfhWUm-Ie_1fAd1XQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="787f34f54b4a20341e8461b955f1b271.png" xmlns="">0baRReAEoU0uzVIaCgYeWIg</imageRef>
+</TargetAnchorable>

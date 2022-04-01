@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/" ContentHash="-utoPS9Tz0y0TeWjEuP6hg" DesignTimeRectangle="815, 683, 16, 16" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;lightning-input&amp;gt;div&amp;gt;span&amp;gt;label&amp;gt;span' isleaf='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl type='' isleaf='1' tag='SPAN' aaname='' check:text='unchecked' /&gt;" Guid="6a86610a-c7f8-40a0-a1be-1160c4694b7c" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="839, 673, 338, 31" ElementType="Text" FriendlyName="'I acknowledge'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl aaname='I acknowledge that the mailing address is correct.' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl aaname='I acknowledge that the mailing address is correct.' tag='SPAN' type='' check:text='I acknowledge that the mailing address is correct.' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1D1AvWITpY0-x-qhZ7hAEUA</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0seJS_pLQU0-zJvcBf2Mj-g</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="daf892efe44162c5bbd928d83a4785cc.png" xmlns="">0RScV6d1kVUyPZJVtvZhcrw</imageRef>
+</TargetAnchorable>

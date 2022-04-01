@@ -1,0 +1,156 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_UseEdge" Type="OutArgument(ui:UiElement)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1182,1322</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="552,1257" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Login" sap:VirtualizedContainerService.HintSize="510,1165" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OutUiElement="[out_UseEdge]" ScopeGuid="0c1a7313-b3d0-4ef4-897d-ae33dffca897" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,949" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ss:SecureString" Name="password" />
+              <Variable x:TypeArguments="x:String" Name="userName" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Time Sheet Login" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[userName]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,540" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,591" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into User Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="0c1a7313-b3d0-4ef4-897d-ae33dffca897" Text="[userName]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/login/" ContentHash="rdf31WCxPUu4LctqjTSjuA" DesignTimeRectangle="412, 505, 245, 36" ElementType="InputBox" FriendlyName="'Type Into User Name'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Username' /&gt;" Guid="452f7c41-39a9-433a-8992-a5ae3fc611bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPkAAAAoCAYAAAA8LVwaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATISURBVHhe7Z0xbuQwDEXnftMEOc0gbe6QKmWOkG7qXCBFjhBkuzTbLBbrFSlRIilZnsxkFx75E3iIbck0RfJbRprZTTAYbGiDyGGwwc2I/Nfvafr8OU0/Pv9MHwCAq4J0S/olHWvLIqcBiBuA64d0rIWeRU5vgNYNAIDrg/QslkWOXRyAcSA9i2WRtyYCAK4XMYgcgEERg8gBGBQxiByAQRGDyAEYFDGIHIBBEYPIARgUMYgcgEERg8gVz3e7aXf3Uh2vCY5rZzkc23PBthGDyBWrFvnb07QnUfuY5PrN0/Sqr/8n1voyNHCObqeHt8bYwIhB5IrVijwJeX7Hfp8ebnbT/vG9MfZvgcjXi9hlIpddRHDF5gbI4yrJx/uw89xPh9CY+rqZr33R/F2Yr8a7Dc3zxU+4L/wtAomCyOPB73O6ryfy9lqir+L7xT2LzmfW566b9XB+ys5sYlE5p3vyvSlHcS0prrB2flbj3irvOt9eFDqfAYn19fG2XKf7TQzez9diqki+ez1g8pvXE2uy6H9AxC4QuWvwVmPMNWpqGr0zccPk+bEwuYhpvj2fK5gVmjSiOc8NENcgfnWMVbwzazH+wrz9jT3P93V8tMZKA6sXhcsx+8hr0y+UuC7t0+eFnymC1MeBuhaurmputY4FkZ8ck4fH5nvAxmzrWvXmRhD7vs91l3RLKvBcM/iiBEzR/Pxe0SrfrpEMcWxR5IbGWlKcFPPhGHymcyvWjg8jJH0cUP4rf5wHWateZ51P7Sdei3PKC6LkiJ7Tzleqi8qvyVO3Tl+NyXGCb3Of9g2RR2tNWoILHJqDCTuYSSQnVsbDWCjCbDO4JiPOFbl9oxPON/uycS2KvLeWLEpqtNbf9Nyuj/g8joPm6fhzs9Y5Mo2c46Dj2PRaUFGc8vyCzOFxjof86NpEX3k+famo8UtEvhSToes75qb2leabudtB7HyR+8S5c1N8f+4LNtcAZ4i89q3F4Z9jz3WMc8dz53oHp9gPjyFGJdYlHxx3mP8c7jVNnq5Hkds1ax9FpDRW57P4KfcbOKchbzTPx6Xz6c7NOvxcU6czYtKc4Nu8ADW9fhkYsQtFXhLLxVaJ5HMpYJo72wwBI+okzNwQ3QJ7tKjLbqFFbuM4UeRzawnE2IM4lV/a8XRDL/nQu5FpVrV2HZPEznP5WOejISiXF1+/nBufV+Nb5pRamJicz5h7e+/XYlKoPJS5JVbbP618u3VtALFv+1znnaxRMB4PyaYdKifdFyyh/RkBdAscm8c0Bs+PfvZhRzVxqTF6hm7SuePuWtR4buBWUy35CMT1+7zovJYXQY6dz/09LUEFdAwBP+6FEhFhE2FNR7c2yWe6r8Qkubd1Oj0mV9duD0T0s21OyhpMnwyO2Pf94221kDCc4FYKi0xeLP56JWRPfAFUIgKbRWw8kfMbvgjiNIGsAbdzOeI62iKWsS3tUmAZsSF3cvvZdgW7uHyyNnZxi/pc11Sf2ABs6nMdgG0iBpEDMChiEDkAgyIGkQMwKGIQOQCDIgaRAzAoYhA5AIMilkWOHzwEYByaP3iIny4GYByaP11MP1qO3RyA64d0THoWyyInowF6A0DsAFwfpFvSrxY4mRE5DAYbzyByGGxom6a/GQ2sH/o/Wh0AAAAASUVORK5CYII=" InformativeScreenshot="8072e93a5f1a8af7874f0d46452cfdad.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/fFecfU-zfkCfDBkjjxOixw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="FuzzySelector, Image" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Type Into Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,241" sap2010:WorkflowViewState.IdRef="NTypeInto_2" SecureText="[password]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/login/" ContentHash="2X6PiM4NjEibB7-MTAfqKg" DesignTimeRectangle="412, 580, 245, 36" ElementType="InputBoxPassword" FriendlyName="'INPUT 47:2;a'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' aaname='Password' /&gt;" Guid="68e66db7-783e-460b-af6c-07004448d01a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPkAAAAoCAYAAAA8LVwaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFgSURBVHhe7d0xTgJhFIXR2Z+NcTX07MGK0iXYWbsBFmG0s7Exxl8e+EZIqDSazPXc5BQMTELzMaH6p2Fm0RO5WfhOIn99G+P5ZYyn5/fxCCxKdVv9VsfHmyOvN8QNy1cdH4c+R16/AOduAJaneu7NkXuKQ47quTdHfu6DwHL1RA6heiKHUD2RQ6ieyCFUT+QQqidyCNUTOYTqiRxC9UQOoXoih1A9kUOo3g8ifxjXl9OYpmlcbB4+r92P1e51XVvdHT633VztX0+XN2P7B/cBB73vR363PkS4tx63u2tzmGUf51eEZR/ir9539P3gn+t5kkOonv/kEKoncgjVEzmE6okcQvVEDqF6IodQPZFDqJ7IIVRP5BCqJ3II1RM5hOqJHEL1RA6henPkDjyEHGcPPHR0MeQ4e3RxHVruaQ7LVx1Xz7058lq9Ub8AYoflqW6r3+PAayeRm1neRG4WvTE+ABT7KXMphnPSAAAAAElFTkSuQmCC" InformativeScreenshot="4494319ed8fa403ee71f6e288c2c2ba8.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/qUTOE8x1d0ivu304eBsr1w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="FuzzySelector, Image" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,378" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,309" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;There was a problem entering the UserName and/or Password&quot;]" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please enter your UserName and Password, and click OK to continue.&quot;]" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Click LogIn'" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/login/" ContentHash="UijQbaVlnkCqSogy2v9aWw" DesignTimeRectangle="375, 644, 298, 45" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Log in' check:text='Log in' /&gt;" Guid="3152146f-6627-4692-879b-519dda60097a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAS4AAAAxCAYAAABkt0S5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMbSURBVHhe7ds/SxtxHMfxPhkfg7OPoI/ArYsPwMVBuunk4OAWEClIrXSwk4VAhhJd6iBaEKQUpATEJf7Jn8vdfZvf3e97uZyX2IOA+eL7A6/B5O66hDeXP30njDFmbISLMWZuWbiC5qE8rC7K/coCAMwV1ybXKF0WLqIFYJ65RumycJUdCADzREe4AJihI1wAzNARLgBm6AgXADN0hAuAGTrCBcAMHeECYIaOcAEwQ0e4AJihI1wAzNARLgBm6AgXXs96TaJg+OILriXYLnkeKNARLrwewoWKdIQL3oFEySuhLeGXsueB16cjXPAIF+afjnDBeylcS9Ktn0jUSQ5KFt+dSL+2NDpmc0sGrbZ/trDWQe5a6vm/GbTc3zcy2K9JeNdLnpWoJ9H5hjw+Ox9vjY5wwZserk7zOnn22dznUzvumDUZTGhWcuFK4SpbT8JvxfPx1ugIF7xp4dqS0N/8xH9q0l1fkMe9o/SDdffY1Ybc7zYkTv66lYG7CxvefYX+7iyqF6+npoTr4Sy9m9v8JFF6kETN4vl4a3SEC96UcOWjtDt6vHflb7Hc3dT2sT//VsL9Qrh+Lo9fLzM5XEkM/XH6GOGCjnDBmxKuzycvh2tlWYK//rZsbMNz9nLXGkO4UI2OcMGbEq6VneytorSO0reKtdxbxYu15LhO/Uzi9CLpOjcSfv9QuFYe4UI1OsIFTyNSXBqV7vmt/7uw4FL6w5DlPwcbW9SW6PTjhG8ECReq0REueNPDlfwc4vRSYv05RNSTuNWQfvKNovNe+r8nfa1YdhfnEC5UoyNcmImnH+nPJeJfubur9dwH9EQHM6AjXJiJ0Qf1R9LddI8tydPX49FPGSb+JAL4fzrChZl4rF/6V1LJ2g3plpwDVKUjXJgR/S9BuU/og7ZEF+kPVsvPAarRES4AZugIFwAzdIQLgBk6wgXADB3hAmCGjnABMENHuACYoSNcAMzQES4AZugIFwAzdIQLgBk6wgXADB3hAmCGLgvXw+pi6YEAMA9co3RZuILmIfECMJdcm1yjdFm4GGPMyggXY8zYRP4BHT2vH9O6a3wAAAAASUVORK5CYII=" InformativeScreenshot="5f16d169b3a7b47acb7c42f89fe5bd27.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/BnYc91qvKkGZakMTlPTrFw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="FuzzySelector, Image" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" ContentHash="KybgooI8q02Zr9Gx83fDOw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZZBSBRRGMdHYolFJCJEJEQkJERCPISHCAlP0qGT5w7RwUNIhESEiAfxGJ46ONIpwmOIiHiQiAiRiOgUb6JTePLQIUQ6TL//25ndt85jXGmc7eDht2/3zbfv+79vvu+9L4jjuKOdnAv4fwUEq+ZCsBp1wmW4BFXN+Wz/hYwAHMkxDs0I431YgHl+TzHe0LNmu6gfrkEfNl1BGJ1KZJOA2q7NAIs9hm8QNzB/GL/CDAzCTZiFDfgMb+ERjEKnu24exwREPfASHMcZDhDzjvHLsfmUXbgHen1d0JugaGWiUxfAw4ssTJjNId99C58GCXwA0/CCNcFG7jawyUYuuQKUbOvgW7AoDCzCdbAiXAEKP+H1/rFoXkG/T8DvxKAMnkHFFXAFlM0+4+IJ7evotQKUFPxQaX2oG5TD3USADf8y/EoelMWTgA8dPiqXI+dBWcxIAPUffXImy2RcAqokRDt2/wO/3Qgw3HJeg7PmKVTSV/AzmSwJ84axzxYAXyqgCvAYFo35zrgEw+m1nZbhMHysGRVIaHS3vMbxCuNzmASVfPNlpAm4hSHGBd0Hob3YuP2MDjj1GDpp865jexqqs5kAdUJSvAd+Bw32YQt2QD3Ce5gDdVRV15mPuoD6hKIRqv+jRGp3+kn9gRJqDIZATvU6vbv1kRHgwiLqZLSbbJXUzo5NGIeK7/+tkC+ATCWR1KjcAXU126BkXYOHoPd7YpjzyBWQghOVqsJ6FVF0vzaT1fO1FOY8WhJwlpwLaLOAuOMveA1Of+TuOKQAAAAASUVORK5CYII=" InformativeScreenshot="7c8402156b91f9da27603c7bb511c0b8.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/Q4haCSnivUGAgKBZ7nAsrQ" Selector="&lt;html app='msedge.exe' title='Login' /&gt;" Url="https://rev2.force.com/revature/s/login/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

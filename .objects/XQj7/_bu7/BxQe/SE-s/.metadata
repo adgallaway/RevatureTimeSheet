@@ -1,0 +1,14 @@
+﻿{
+  "Id": "SE-sEdE_mES1USicWf3fJQ",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/SE-sEdE_mES1USicWf3fJQ",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Get Text 'Thursday'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-02-25T17:39:30.8280872Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:39:30.8280872Z"
+}

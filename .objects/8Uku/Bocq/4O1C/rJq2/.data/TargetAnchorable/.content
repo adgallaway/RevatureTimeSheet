@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/login/" ContentHash="Z30pj1xIO0WQeIfd_7kKQQ" DesignTimeRectangle="268, 701, 447, 67" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Log in' check:text='Log in' /&gt;" Guid="aaed1fb6-bf96-44cd-a11d-30bf9d67e89e" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
-  <imageRef attrName="ImageBase64" xmlns="">0pA8tKrHIk0CwvDNjK7wMEg</imageRef>
-  <imageRef attrName="InformativeScreenshot" originalValue="b9983a99eebcba853ca493c4df6b7e2b.png" xmlns="">00DkHKkXss0qkHE7f-hiBYg</imageRef>
-</TargetAnchorable>

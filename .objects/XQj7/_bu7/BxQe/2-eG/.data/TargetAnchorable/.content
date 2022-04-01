@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="WnleS2mNFUuaj83qAs_bbQ" DesignTimeRectangle="1507, 194, 200, 52" ElementType="Text" FriendlyName="'Logout'" FullSelectorArgument="&lt;webctrl aaname='Logout' aria-role='menuitem' sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC37/selfServiceUserProfileMenu/auraIf/auraIteration/uiActionMenuItem/auraHtml:anchor' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Logout' aria-role='menuitem' sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC37/selfServiceUserProfileMenu/auraIf/auraIteration/uiActionMenuItem/auraHtml:anchor' tag='A' type='' check:text='Logout' /&gt;" Guid="e5946659-3f6a-4087-b6ac-ccbef82a86f3" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="1507, 142, 200, 52" ElementType="Text" FriendlyName="'My Settings'" FullSelectorArgument="&lt;webctrl aaname='My Settings' aria-role='menuitem' sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC37/selfServiceUserProfileMenu/auraIf/auraIteration/uiActionMenuItem/auraHtml:anchor' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Settings' aria-role='menuitem' sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC37/selfServiceUserProfileMenu/auraIf/auraIteration/uiActionMenuItem/auraHtml:anchor' tag='A' type='' check:text='My Settings' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1_H-YI5nOTkeVzXvGXOVISg</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0X_2UpGWa50u89DZRfheKMg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="53aba42f4140cb3d55f41a0e4ed613ba.png" xmlns="">0bEUdAuNPQEObfiET3LYacg</imageRef>
+</TargetAnchorable>

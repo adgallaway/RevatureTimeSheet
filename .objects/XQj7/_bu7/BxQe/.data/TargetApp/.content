@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="-1928, -8, 1936, 1048" BrowserType="Edge" ContentHash="evuGiSfWBkuJ47d6hfT8wQ" Reference="0Bwyp9sYlE6yYvtbTxlVcw/sRHWbW7KWUupju8D3Ldvwg" Selector="&lt;html app='msedge.exe' title='Timesheet'/&gt;" Url="https://rev2.force.com/revature/s/timesheet" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0Ocxoa3PI0UCUYKTbTgMEmQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="25e2fa3172b9672f83b94ea3f886bb72.png" xmlns="">0mI8eLNzBh0SUho7BEBm5FQ</imageRef>
+</TargetApp>

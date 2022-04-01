@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="o4v7m1TLOUKQ2FB1Go5stQ" DesignTimeRectangle="535, 259, 15, 15" ElementType="Text" FriendlyName="'Date Picker'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/uiInputDate:search-date/auraIf/auraHtml:datePickerOpener' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/uiInputDate:search-date/auraIf/auraHtml:datePickerOpener' tag='A' type='' aaname='Date Picker' check:text='Date Picker' /&gt;" Guid="609b7a08-82b5-4e5a-95d6-93df8528f37b" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="567, 247, 118, 32" ElementType="Button" FriendlyName="'Create/Search'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' aaname='Create/Search' check:text='Create/Search' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1lAlEFlpqTUKO-SZGhXQejg</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0pVMShzDIfkiUV97jRo5BVg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="cfb87834b1c12706e163ac887246065e.png" xmlns="">0lbxXctuv0EiccDxg7HPYhA</imageRef>
+</TargetAnchorable>

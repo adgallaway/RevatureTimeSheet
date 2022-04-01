@@ -1,0 +1,18 @@
+﻿{
+  "Id": "Q4haCSnivUGAgKBZ7nAsrQ",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/Q4haCSnivUGAgKBZ7nAsrQ",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/_bu7UmDw4ES0lc0o4pwUXg",
+  "Name": "Edge Login",
+  "Description": "Opens Revature TimeSheet in Edge",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2022-02-25T15:17:52.0269857Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-04-01T15:39:29.5282716Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

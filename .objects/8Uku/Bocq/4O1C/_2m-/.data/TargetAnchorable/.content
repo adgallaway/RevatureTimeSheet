@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="FdENyVWMZEiay9Uf5eVS8w" DesignTimeRectangle="858, 849, 202, 54" ElementType="Text" FriendlyName="'Logout'" FullSelectorArgument="&lt;webctrl aaname='Logout' aria-role='menuitem' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Logout' aria-role='menuitem' tag='A' type='' check:text='Logout' /&gt;" Guid="1f2b8bc3-e141-484d-aa34-e725e3a7aa7e" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix">
-  <imageRef attrName="ImageBase64" xmlns="">0s8aPlgHI7Uym3kuACzyA0w</imageRef>
-  <imageRef attrName="InformativeScreenshot" originalValue="69609bbb7324aba6b7b59bfb8a65c3a3.png" xmlns="">0nCPIEMl4iUSbpf9KlgszYA</imageRef>
-</TargetAnchorable>

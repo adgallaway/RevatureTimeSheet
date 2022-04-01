@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="85PIilLsU0eGw0Ra9zJwLw" DesignTimeRectangle="873, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="b66fa3de-2059-4af3-b9db-929a5f585c6a" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="841, 263, 134, 20" ElementType="Text" FriendlyName="'Mon'" FullSelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Mon' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">1j_VbyyiGykWdHYEmpU0ZsQ</imageRef>
+      </Target>
+      <Target DesignTimeRectangle="873, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='4' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" SearchSteps="FuzzySelector, Image">
+        <imageRef attrName="ImageBase64" xmlns="">2AD8RtiftR0usODBU18hlJw</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0hCpC1UKBtUGsCQQwuawWLg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="b69666f96a8d9552cd02912ed29b34ca.png" xmlns="">07wMzPQJ7ak6elk-tWWec_g</imageRef>
+</TargetAnchorable>

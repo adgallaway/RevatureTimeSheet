@@ -1,0 +1,13 @@
+﻿{
+  "Id": "OC7yfsiZKUmTTyeVNGeIYQ",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/OC7yfsiZKUmTTyeVNGeIYQ",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/iRwX_w0KB0qL1P-vzOw5-g",
+  "Name": "Click Open Current TimeSheet",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-04-01T15:57:29.0971073Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-04-01T15:57:29.0971073Z"
+}

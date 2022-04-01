@@ -1,0 +1,13 @@
+﻿{
+  "Id": "Iy6uHYWxQ0WZqPqDy8ZP3g",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/Iy6uHYWxQ0WZqPqDy8ZP3g",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Wednesday",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2022-02-25T17:47:28.3384979Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:47:28.3384979Z"
+}

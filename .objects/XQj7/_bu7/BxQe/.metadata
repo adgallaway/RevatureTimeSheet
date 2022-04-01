@@ -1,0 +1,14 @@
+﻿{
+  "Id": "BxQemW_qoEeUrc6foXW3nw",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/_bu7UmDw4ES0lc0o4pwUXg",
+  "Name": "Edge Timesheet",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2022-02-25T17:39:15.1491366Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:39:15.1491366Z"
+}

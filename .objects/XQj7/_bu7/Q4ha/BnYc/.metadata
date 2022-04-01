@@ -1,0 +1,16 @@
+﻿{
+  "Id": "BnYc91qvKkGZakMTlPTrFw",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/BnYc91qvKkGZakMTlPTrFw",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/Q4haCSnivUGAgKBZ7nAsrQ",
+  "Name": "Click LogIn",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-02-25T15:25:50.5313733Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T15:26:00.1776667Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

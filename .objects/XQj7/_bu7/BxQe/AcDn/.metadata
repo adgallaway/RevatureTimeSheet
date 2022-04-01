@@ -1,0 +1,16 @@
+﻿{
+  "Id": "AcDnPapJFkKHGrtKVFvbyA",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/AcDnPapJFkKHGrtKVFvbyA",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Total Hours",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-02-25T18:25:08.5227794Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T19:26:27.0892464Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

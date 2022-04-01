@@ -1,0 +1,14 @@
+﻿{
+  "Id": "ZvlpukCU802vivb8CA7fEw",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/ZvlpukCU802vivb8CA7fEw",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Get Text 'Friday'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-02-25T17:39:35.0979627Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:39:35.0979627Z"
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" BrowserType="Edge" ContentHash="KybgooI8q02Zr9Gx83fDOw" Selector="&lt;html app='msedge.exe' title='Login' /&gt;" Url="https://rev2.force.com/revature/s/login/" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0CgBxgDtHak-GUuvR28wKaA</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="7c8402156b91f9da27603c7bb511c0b8.png" xmlns="">0wfgI1ayoTE6iF1Gd-Ysb_g</imageRef>
+</TargetApp>

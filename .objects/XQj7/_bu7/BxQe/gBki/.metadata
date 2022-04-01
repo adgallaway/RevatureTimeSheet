@@ -1,0 +1,14 @@
+﻿{
+  "Id": "gBkim1y3tkiv2PIvm74wwQ",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/gBkim1y3tkiv2PIvm74wwQ",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Get Text 'Monday'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-02-25T17:39:26.2744107Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:39:26.2744107Z"
+}

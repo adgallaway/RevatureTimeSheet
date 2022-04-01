@@ -1,0 +1,16 @@
+﻿{
+  "Id": "RK4wW8N0SkmTCWUrvBEaCA",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/RK4wW8N0SkmTCWUrvBEaCA",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Thursday",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2022-02-25T17:49:19.4037713Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:49:19.4037713Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

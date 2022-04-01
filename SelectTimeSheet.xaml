@@ -1,0 +1,307 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SelectTimeSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="out_TimeSheetCheck" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1182,2687</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SelectTimeSheet_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="40">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SelectTimeSheet" sap:VirtualizedContainerService.HintSize="714,2622" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Select TimeSheet" sap:VirtualizedContainerService.HintSize="672,2530" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" ScopeGuid="d52c5628-72ec-4d52-871d-6314d26bbd47" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="638,2394" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="confirmAddress" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists 'DIV  content_734:229;a'" Exists="[confirmAddress]" sap:VirtualizedContainerService.HintSize="596,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9805bb7-0d51-4263-a116-975703ce5c5c" InformativeScreenshot="824482a4400cd2dc122364d7a8161ca4" Selector="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/auraHtml:body' tag='DIV' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[confirmAddress = True]" DisplayName="If 'Mailing Address' screen " sap:VirtualizedContainerService.HintSize="596,2156" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap2010:Annotation.AnnotationText="Need  to allow for changing address." DisplayName="Confirm/Update Mailing Address" sap:VirtualizedContainerService.HintSize="560,1968" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Info is Correct Checkbox'" sap:VirtualizedContainerService.HintSize="518,156" sap2010:WorkflowViewState.IdRef="NCheck_1" Version="V1">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/" ContentHash="-utoPS9Tz0y0TeWjEuP6hg" DesignTimeRectangle="815, 683, 16, 16" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;lightning-input&amp;gt;div&amp;gt;span&amp;gt;label&amp;gt;span' isleaf='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl type='' isleaf='1' tag='SPAN' aaname='' check:text='unchecked' /&gt;" Guid="6a86610a-c7f8-40a0-a1be-1160c4694b7c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABWSURBVDhPY/hPZUA7Az99/Pj/wb27/+/evkUSBukB6YUBuIEgiR/fv0N5xAOQHpBeGIAbCLKNXICsd9RA8sCogRAwaiBJAKuBVC8cqF58UQtQ2cD//wGCPSH7F81yYgAAAABJRU5ErkJggg==" InformativeScreenshot="daf892efe44162c5bbd928d83a4785cc.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/s2ISieWZHkWx4sxm4fPAhQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="839, 673, 338, 31" ElementType="Text" FriendlyName="'I acknowledge'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl aaname='I acknowledge that the mailing address is correct.' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningInput:AddressChecked_field' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl aaname='I acknowledge that the mailing address is correct.' tag='SPAN' type='' check:text='I acknowledge that the mailing address is correct.' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVYAAAAjCAYAAADPNyJFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAtjSURBVHhe7ZsHixVLEEbf3zXnnFBRjJgwKwZUxIRiRlQURUVUTJhzVsxi1n6c5n73lW3PnbnrrLv7qAPDzvb0dFdVV1WH2f0nOI7jOLXiidVxHKdmPLE6juPUjCdWx3GcmvHE6jiOUzOeWB3HcWrGE6vjOE7NeGJ1HMepGU+sjuM4NeOJ1XEcp2Y8sTqO49SMJ1bHcZya+SuJ9fXr12HMmDHh7NmzjZKupQ55du/eHdugrb9FV9uRfv+2zu3y/v37MHXq1LBp06b4e2qzK1euhGHDhsWf3QXJiE8V0RX+luPo0aNRjsePHzdKnBy/JFacb/DgweHOnTuNknro6oSQUoc8ne3otD9r1qzw6dOnRkk9cjO2o0ePLh3jFStWxMtCv52pcx14Yu1c/u+JtWp8lOGJtYN4Yu0ZdDffyyEZe0Ji/b/jifUPqEMeT6w9g+7mezkkoyfWruevJ9avX7+G/fv3h1GjRoVevXqFfv36heXLl4ePHz82aoR4v2HDhjBgwIBYZ+jQoeHq1au/Offdu3ej8KtWrQpfvnyJTrN06dKwZ8+eMGjQoNC7d+8wc+bM8PLly1gfPnz4ENasWRPb5jnbvWvXrsVntEtf9+7di7+TjEhKEydODO/evYtlb968CWPHjg0HDhz4TZ6fP3+G06dPh3HjxjXlpt6PHz+az0+ePNnUnZ/Tpk37xdGRb9myZdEu1OHq379/GDJkSNOeyIvcyI8emzdvjvqnkNDUBpf6kdw7d+4Mc+fODX369In2OnjwYJQRsBl2tWOg5+hr2+WSDYRsZ+sowVMX3fft29e01YQJE+J4ijJbWtAHexw7dqxpF/Q5fvx4OH/+fLYP2mEsKKM+NkA++YrkV5JKxzoNHMqpf/jw4TBixIisTs+fP4916IvnXIytHX9RJh/gi0uWLIm+wsVz4k4yl/kb16RJk8KZM2fC4sWLYx/z58+PMdrKx759+xa2bNnS9A30xc6AvsQL7yET7dpJXWAvq3fV99Dp8uXLzbrITP5A5laxDdiF2Dpx4kSUuW/fvuHSpUuF5fSP3sol9Hnr1q1GayHag1yDb2IH+sUH0U3jq0t+0y6VEyuGOXfuXHj48GG8f/LkSTNRAcrMmTMnGoVngPFJtvyUc7948SKMHz++mVQBA2Ho7du3x3aePn0a66xfvz4+V9sYkTM03tu2bVs8K2Ngnz17FkaOHBkDEh49ehTfx7k1QPzE+Ohm5QESAe9fuHAhBgZ1aVvtXbx4MQwcODDs3bs3OidBQuKXg33//j1ODDNmzAhv376NjjJ79uywYMGCpo4MLH0cOXIk9sEZFTJu3bo12jMFmxBw1kklN4kBmWgHpyJ537hxI9bB3gQldqJdOd2DBw/i8zSxFFG0YsXZ0Itkg24rV66MQa8JtsyWFunDON2/fz/WJyDwBQIUW6I/SUOJA2jz+vXrsT62xu7r1q2L+lIfuylJpWOd6k85wYeu2Exjp/7QC/14bn2TBURu3KCVfNgM+02ePDnGCXXwCZKSZC7zN+lEwsXetMECoszHKOd3+uV32kU+9CZR79ixI76H3ryb0w97SY523yO3MCmjExdxWxbbgF1IfosWLYo+QR3ey5XTxurVq5sLM/phIYKtGDtide3atdEHbt68GWXlHS3AqsZHGR0+CkAgjKHgI5AwRu5dOQKzAk7LpUCEXBKhXZXRtk0OgEOQxEm+DCiBQLIGnG3evHlh4cKFcSCBn9TnPRtstE8/zORCutGmkgcrRO4FMqeOrsCAQ4cONZ/THm3gAAysYMDtqtqSs4n6QT+B8+A06JIjfV7VcbC/xlbQBm3RpkAW6VlmSyVGIX2s7NynPogtmMRZ6eXAjrKVZNBYpH2k+lMu+YUdW+ohj5URn0vHphVWPtojTvBpIRnpV75Sxd+UrKGKj8mOTIoWtbdr165me0VYe1V9Dz3Qh/i0skFZbANys7q0dSBXjn1pj8lNKAaISery3MaQJfWPjlI5sTIjsfpBQLtUVvChpBJXigYAh2J1pS274N3UUW1i5bkG05LWUf8MCMFNGY7GwPJTAS950Ff3ViddtM1zftpkAVYmtUGZYIWmZIB8tJHrI6cX0JZ0E+rHBnlaxoRlj2N06XlVxylKrKm8tkyy2H51pbpATh/uc4lVfRDAdkuZti9bayzSPlL9czrZ/qiXJlZ8gcXB58+fGyX/USYf7bCqZLUmJCP9Sv52/U3vqT976T3ibvjw4XF1zESnFRvJjiSNvMQ37dqFj8Xaq+p7kje3a7F6WarEf64c+XI24KJ+zv6W1D86SuXESoZne8JZFMtrsMGH0EWrLxmWLRVLdJb+GEzwrowoqhiWOnJwZKYOTj19+vR41sKshUw8Y7tJGUge9NU9feSQw7ZydFZirI7TowDN0GpDtqpCziZWbmHL6Is+Sehsowia9J2qjmPHVtCGdBa2TH0V2TIllQ24b5VYKWdyZnsr21hbydaSIe0j1T+nk+1P211sQds6CijSsUw++uvMxFrmYyQ+jhg4vyYhcg/4ColWZ7/Ei92ZiNReVd6TvKwYU6xeFvRQbBfVyZXn/MfCcxZ4HBfmSP2jo1ROrBs3boyJQzMSBrVHAbzLYbHO+iwyLHW0FMcotAHcy/EE7VpnTNvWdkEOqN85pyWBv3r1KiZ5yjio5kyLMrDyyCHZRkkeC2VlWzMgUAg4ZkYcDNto9a42Uh1bkbOJlVvYMiUBtn+i7qMAqzPYsjJbpuT04b5VYuWcEH1s8HbmUQDgdwQjY8tOoOijI5TJR791HQVIR2jXx9iB8l0gt/JGX8ZAH7YsOXuJovc0JvSXHgXQXllsp+MhcuXYl4lN452i5+y+c6T+0VEqJ1ZmG56xCmTFysqVBKLgw3isRFmR6gwHhUnEcgQpS1s4l77UYaDUIWxipQ0cID2QTs9mOAIgsfBxgFUkg8gRABOCPXtK5WE1jm5ajeN0HPArMfIxgef6KMCHFlaFGlTaxWlI6kWgKzprJUMgYKeic0POhJkMWAGjC1cqN9gy6rDFQ19kJ9GS4EkIeoftICsmffzKbd2Ala8+vhF42IU2pLNIy8psacnpw33qgzaA2HWQ3AgM2iaIOWeTr3Bxr6ST9pEGTk4n2x/2YaI+depU42lryuTDnthVvszvfKxh9SiZy/xNOqm+KPMxJn99JGQ89FENGfjYhq68k37wtFh74W/tvGf9ggt5qsS2HQ9Lrpz3+Xhld23Iid7EKRcfr+xz+/EqFx96p2gVn6NyYmWgOLsjmWpFhgJ2VYMQ9nyPtviTEDmCnFvOxayEUhioVWIF+ycqfDVmINL//qB966BAEkcWuw1J5cG49lyMi+DDafScv4hgsHlGPZzXDip90o+9GAh92QT+ogK5kZ/nBEHRzMlfT0yZMiXWQ+ecHSEtwyYkAuQkoEn2JGg9x/EIJmSgDmOIA6Xcvn07rrwkJz5BG1ZnSMvKbGnJ6cN9q8SK/GxfWeWgAz6CjvIVLu7lA2kf7SZWgopJRmPKhU5KBCll8gFJjYmY58QK48GYSeYyf5NOqm9p5WMkatqkHJ8inogrLhZFlPGMcecvS5AjxdqrnfdSv0A+FgHkjLLYtuNhKSonv9g/p6Jd5NTknj5nDHQkkosPEvMfJVanYzDLcQzAWZNg8NiaETA4j9MzIZGwC7Jf0rXay21tHQc8sdYAM6c9fxasktlyMCM7PRN2TuzO0lUYx06580nHAU+sNaAzMZ0fEYQcAZBUW/0hudP90fcAzko5MuHinjJ7vOQ4Fk+sNUDi5KMNZzCcy+i8if9K40jA6bkwUTKOOm9mfBlnPmblzqYdBzyxOo7j1IwnVsdxnJrxxOo4jlMznlgdx3FqxhOr4zhOzXhidRzHqRlPrI7jOLUSwr+Az1+ffgbenAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="518,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/" ContentHash="E3eMzBpW-0K9U1e3MawR_Q" DesignTimeRectangle="1235, 740, 61, 32" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/cConfirmMailingAddress:modalContent/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' aaname='Save' check:text='Save' /&gt;" Guid="c0e552a6-c422-4fb0-8996-61f49edff984" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAAkCAYAAADWzlesAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJbSURBVGhD7Zlhc5pAEIb7//9XmtoZR6YxGhOMUmOhSlEU0cDp23fBQzD0S0KmGXPPzM6Ad9y4z+0tH/gCA4wEUpEQRWv0e118//YVreuriwvJS/KTPMsUEmTgUpM/D8mzLKKQIIbqHrjUkHw1hYTPUgU6JF9NIaFu4qWHxkggRgIxEoiRQIwEYiSQhiX04IZb7A/HRQ97qI2H+9q5/z80jUroz7dcKcFiZGX3N3cOZu7oxbyPEppGJThhCqRLODVjrRsHQZyeqkTFCB7baNkBtaUIx3puG7OY45ELi/fW4xx8LOeQIp4Ps99frP+K0DRbCb9j7LmW2viYDrtnf5ZHZe7BuWXinQF8KZrY4xwbi4T1s7CP86bYUNTGlXm85oIqnKDfYWX9XEFVhL0tNA33hDbG3go7vXNqi3Daq5lXrRo7EAsBbBn7FXHHI7i8tqQkeO1RQP7cIBOmlsPKWq8NTcMSTmHdjuBvxEaC4IG//Tg7DoI+Oj0fO+klnDddc+ujabZGJqoGFTbTZzTvJiGLzpzJsepnV5ismFzKHX5gmcuY7HLRP7oIOHHnTxCme6yf8uezSvhXj2kgNM1KGLvwn+zs/LauLYz/8HV5rASXVY5nHzbHpEqCrUg5JZi9WZ4TJGqFiV7v2BOSZd4T5Lj1hzYGevyNoWlUwr0XQSn+a01a6gl3LrLTIbBXLBa0Ut7lXl41+5VTWTN/O5TXZI/onsbfEpr3PQ4fPDRGAjESiJFAjARiJBAjgRgJpJBgPr4Q8xmOmA+yR2RADF2qDMlL8isLECoSPitGAoC/TSK3JFL6Y0cAAAAASUVORK5CYII=" InformativeScreenshot="642be9c7c0e4a656eccc0da195d9fc23.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/oA-x3yNvDkivHMEa2sR4sQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="FuzzySelector, Image" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Click Open Current TimeSheet'" sap:VirtualizedContainerService.HintSize="518,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/" ContentHash="sxWOcZ0n1k6XyVlqZqnV7w" DesignTimeRectangle="574, 178, 14, 14" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraIf/lightningButtonIcon/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraIf/lightningButtonIcon/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='svg' type='' aaname='' /&gt;" Guid="29cab65f-a438-49d9-8bad-2cf376fe6ca4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADMSURBVDhPY/iUqfqfGnjgDPraH/P/+8IyDHGSDPrS6vcfBn4dX4siR7RB32Zk/v9cZAw0YB3UqP9gMZg8UQZ9X1gO1vj38TW4Yf++ffr/pcYBroagQTBDYABmGLIhIIzXIHRDQADdJTCM0yCchgADHJt6rAaRaggIYxgEigl0QMgQEEYxCKQYFJB/H1+HGkGcISCMYtDft0/ACQ1mGLGGgDDcIJBmGIAZRqwhIAw3CDlsQK4hxRAQhhsE0gjLBsgKiMUoYUQJppJBqv8BYvx1g55N7q8AAAAASUVORK5CYII=" InformativeScreenshot="c8b7bec38ef0380ff8a18cf4c804cd99.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/OC7yfsiZKUmTTyeVNGeIYQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="313, 169, 292, 32" ElementType="Container" FriendlyName="'TimesheetsOpen Current'" FullSelectorArgument="&lt;webctrl idx='2' sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraHtml' tag='HEADER' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' sfl-path='siteforceCommunityApp/siteforceRouterInitializer/siteforceGeneratedpageF14ae642C20846f489c312f48115ba02C37/cCommunityObjectWidget/auraHtml' tag='HEADER' aaname='' check:text='TimesheetsOpen Current Timesheet' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASgAAAAkCAYAAAA6sqfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATNSURBVHhe7Z3dahtHFMf7MqEP0AdonyB3uesLqL4rIc1FEfgiQRcNpr0wvVAuopT4QkgUB4EcELgouIamMdTBQqWICH8Imwip0VYRK5STObM69lqa1bfk3el/4IetmdnZc8Dnx+ysjT+7E3tEAAAQRiAoAEBogaAAsJS7sfv0xzdfUiP2Ob2P3Qo1HCPHyjH7c4CgALAQLvQoiGkQjtkvKQgKAAvh3YhJAFGAY5c8ICgALCSKuyeBY5c8ICgALMRU+FFC8oCgALAQU9FHCckDggLAQkxFHyUkDwgKAAsxFX2UkDwmF9SLM3J7XSq/MIytgFS5Q9SuUsowBgC4jqnoo4Tk4Qlqr06j2smemvM/EBQkCGzBVPTL4r+Nr+nDk3vGsVmRPIZ3UFpWHTpMD/TfMBAUAJNjKvpl4Dy47e1iVHN/zxjnzILkAUH5gKCALZiKftG0f45R69svlJiynqFU4z7T3GmRPCYXVLpKjr+f5/1bpfxBnZyeFxx16lTcylH+H0c9Dnpd7rsKpeK+dTZf0euaEkG/ua1zyj9O9sezlH/bubyW3A5Vfnumxzx5nNP+G9/9+NrNSddWxAtUfHsVG7Wb9Pr5Uz1WqPX7LludCvq64JgACCumol8kH558p8uhd3x0KamP7ffkfP+Vcf60SB7zCUo19+JvSibU58Qrqmg3dKnxZp/WlZTWtirUUD2Nv3LeNfFdOmz5r9mhYq2rbndGGTX/xwNHZdykopZKktZ/eUnJvoC0oFRzTkuU2lDjiZdUbquOixKtT7A2i6bAn1tntM3rx9OU0Ws2ad9/j4Ed1KiYAAgrpqJfFCInaSKpRcmJkTzmFJTsMjz0LuRagStpsEROD/XnNX2NEsJPV9fcyfK6RJVCXxAsA4MATPLw941b24u/S+WcbzxeonM1LgINvEdATACEFVPRL4JBOXFb5M5JkDxWI6iaJyhd7AFNvylMqx1X/1HKaajHuVyO1vprjRPU2LV1vObmlHcD7zEqJgDCiqno5yVQTg9uG+fPg+RxA4K6fs0QiQIVynVq9H3jHAXLY1hQI9YOysuHUVBMQEwAhBVT0c/DKuXESB4rFZT3GDZaElc8peKFmt6qUlJ9HieosWvr+Hk35Ts0HyBQUJdcj8k8B4Cbx1T0s8Jv5gbbMuXESB4rFZQcZPNBdT7lvT1b29ihzPMdbzx9QIVfs3SPv5dD8OMD/Ug1TlBj15ZDcrdJ+9m095iWyNJWbtc7ZFckj9R6nXPa1ofsWXrIX0fEJHEAEDZMRT8LLCE+AO8dl9QPvteWLSdG8litoBj1uFQ89b2273XJrZXoBzWW/LNJjtvvV815V6XtEW/YhvpGrK3H4znaLqt7yLhqrhJaRsY3D+lELSntZO/ZyJgACCumop+FXv1E/wKmSGoVcmIkj2FBAQAij6nop4WlJE0ktQo5MZIHBAWAhZiKflr8Z0+8e1qVnBjJA4ICwEJMRT8tLCT5cxbT+DKRPCAoACzEVPRRQvKAoACwEFPRRwnJA4ICwEJMRR8lJA8ICgALMRV9lJA8ICgALMRU9FFC8oCgALAQ/ONOAEBowb8+BwCElrux+5HcRXHMHLvkAUEBYClc6LwbiYKoOEaO1S8nBoICAIQWCAoAEFIe0SeXBdcGNjVbvQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="The Element Exists when the previous weeks Time Sheet was not submitted" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e89180fb-32cb-49be-8749-b9b7a2b31c4a" DisplayName="CV Screen Scope - Element Exists when Time Sheet not submitted" sap:VirtualizedContainerService.HintSize="518,1256" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+                    <p:CVScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:Boolean" Name="timeSheetCheck" />
+                          </Sequence.Variables>
+                          <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Button (249,31,120,35)&quot; +&#xA;&quot;Anchor: Text 'Create/Search' (265,40,86,15)&quot;]" DesignTimeCacheId="e89180fb-32cb-49be-8749-b9b7a2b31c4a" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Button" sap:VirtualizedContainerService.HintSize="484,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="f9cdd98410271901fb989e9b61b1ccfb" Result="[timeSheetCheck]" Version="V3">
+                            <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                              <uc:CvDescriptor>
+                                <uc:CvDescriptor.Anchors>
+                                  <x:Array Type="uc:CvElementDescriptor">
+                                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="265, 40, 86, 15" ElementType="Text" Text="Create/Search" />
+                                  </x:Array>
+                                </uc:CvDescriptor.Anchors>
+                                <uc:CvDescriptor.Target>
+                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="249, 31, 120, 35" ElementType="Button" />
+                                </uc:CvDescriptor.Target>
+                              </uc:CvDescriptor>
+                            </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                          </p:CvElementExistsWithDescriptor>
+                          <If Condition="[out_TimeSheetCheck = True]" DisplayName="If - Check if last weeks Time Sheet was submitted" sap:VirtualizedContainerService.HintSize="484,754" sap2010:WorkflowViewState.IdRef="If_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence DisplayName="Forgot last weeks Time Sheet" sap:VirtualizedContainerService.HintSize="376,568" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Date Picker'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="o4v7m1TLOUKQ2FB1Go5stQ" DesignTimeRectangle="535, 259, 15, 15" ElementType="Text" FriendlyName="'Date Picker'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/uiInputDate:search-date/auraIf/auraHtml:datePickerOpener' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/uiInputDate:search-date/auraIf/auraHtml:datePickerOpener' tag='A' type='' aaname='Date Picker' check:text='Date Picker' /&gt;" Guid="609b7a08-82b5-4e5a-95d6-93df8528f37b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADSSURBVDhPY/hPRUAfw05euP3/y7cfUB4EgPinLt6B8jABVsPuP371PySz9/+WvWehIhAA4oPEQfLYAIph81btBysmFoPUIwMUw+r6VmLVhAuD1CMDFMNAzr9y8xHRGN27GIZdvfWYaIzXMKp6E2ZYXNEUMDuzejacDaJBfBibaMNgilZuOQZng2gQH8Ym2rDMmtn/VwE11vevgrNBNIgPYxNt2OD1ZjzQZpB3SloXoXgTxAexQfJEG0YsxmvYqzcfwV4hFoPUIwMUwygFVDTs/38A3hDMr3x31jkAAAAASUVORK5CYII=" InformativeScreenshot="cfb87834b1c12706e163ac887246065e.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/Y98UU0keEE6Y7xyRE0nHjw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="567, 247, 118, 32" ElementType="Button" FriendlyName="'Create/Search'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' aaname='Create/Search' check:text='Create/Search' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAkCAYAAABG3S5jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASrSURBVHhe7ZvNaxtHGMb7z/iWW269+ZZbbrnl5osRBCMoxcEUm1AciqmhFEEQhmIEBR9yEBicgpEPoQ4YbBCOIYnqy5I4iEAj7Uq7Wnl5+zwzo9Wuvpw2dlJp54HBWs9o9tX85v0Yof1GrDIhCzojSoEOAl/eX7yT89ob+evNa9umsJEdGZJlUjFodnBQ4+NHiaLI/Ndq2kR2ZEiWSdgxaO4CDrCaDZElmfYUg+YOsJ48OyJLMu0pBs34bjVbSjK1oGdYFnRGZEFnRBZ0RmRBiyPt38o4Z5rLGZUFfVaQ5uOyhOby6+lYvMUFaV2Yy2vWjYMOj7bEXflWmotzaLekufJQ2o7pvDbVpbU2J96JufwXCkrz4u431OvwqCDuEmykrTnY/FNZOqrnS2iKQXf2FrBg98R74cil+f6l67yUQK/rNeo/go5eipfPS5v2OCUAhq3VhtDUKKhLUK19QU+fVtDBoXi5udhbhnSxI+5GWfzKqjQfwIOWS8I02a3tiLd8W3vV8qq0aiZ5hsilxZweq/rWpf2BHRqyjhhs/cUaO5dRdIqwvfFMwzxZx7h1SX/9n1BUF3+bGxdzwdvd7UMJzeYNq4moxb6nNemqHsDLF8Q/Rb+KFKvShgmRcyDeo8T4Sl2PXbwvXqVnM8Y/2hK/rSb6bN0c6OrPMNZ4yygRdB5hs4gFw0pHbH8/Ezd3BxFAe1X4Aoufx+IrPoEER8fS4euoIf6TeWkWj9W4kR49cS4tfxv3rxgDL8oYj8X9pSS+E5h5+wpKd6T5444u2rDpeD93l4Bgzttj8c9NJEBkcOPNRniwc7P3vv5ndPdrOsqFDQkVTI4F+E1TGIY18VZwjz19j8/VzYG+ykMI2uzwnjq78JhUYcTQegvh1FwmpMau7ZgcOgz6yrlU2E7fv0tPewygXPClBfGO6hp4BAi5efFO1TClsJIH+FFFnAambeHru9I6Vx1KIdPZyOKPY9Oh2y/CDmzm69DX9eiBjaA+GBd5oKlFGwzdbBNAT5wLUmH71wO51Jdpwcv83YcYj4hQw7WydcR85v5hFV4cF5y69UF/KrxpBf0pOXoAtPLCJ4dDYZPqPL2Hhd3qF3KMGFd59Ji5KL8I7/4z4c5DQnj+wYRn5dH3pfXWdCWlPie8HXlW3ytpyzC84UjT07SChnTVDePP6omq29FFzAjQOq+i8j3R+Y7qfmgor+MxqLmJwgkdUQDvLiDEDoB2n2twl/wzYS4NLh22JaiJf+JI1xAIX8FLmePp0ZDK0Sgee1+ssCpXubWB+yA8e6/0/8Mzvm886Lh2eG5OIqkcPaWgqaFz9Pc5afEcPQo0pCrleDyqT8JlRxs5tVepooJu7yP0xqCxqf5AzmRFjPe4e/qgPm6uiNGgcJgO2w4ArN01c6B9l+vnaEpV3YnUsYRNdKqpd3onB1bQvx9Ia2MCaGio6lb2Tjno/6P84m1U40l3nn1lDzTD9oPV1DErC8qkR2dRFnRGZEFnRBZ0RmRBZ0QWdEY0EjR/7G1/wD87GvsDfvtIzmxp7CM59iG72RDZkSFZjnzIjmIHdwEHMb7bNn2N7MgwCZlKgbaaXVnQmZDIP7V7nM87cvMuAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Apparently you forgot to submit last weeks Time Sheet. Please click on the Date And click OK To Continue.&quot;]" />
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Create/Search'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="4-9KclGIVE-M8oiS9wsmsA" DesignTimeRectangle="567, 247, 118, 32" ElementType="Button" FriendlyName="'Create/Search'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' aaname='Create/Search' check:text='Create/Search' /&gt;" Guid="57fc700c-1c54-47e4-8c3c-f5e10f2a28c4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAkCAYAAABG3S5jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASrSURBVHhe7ZvNaxtHGMb7z/iWW269+ZZbbrnl5osRBCMoxcEUm1AciqmhFEEQhmIEBR9yEBicgpEPoQ4YbBCOIYnqy5I4iEAj7Uq7Wnl5+zwzo9Wuvpw2dlJp54HBWs9o9tX85v0Yof1GrDIhCzojSoEOAl/eX7yT89ob+evNa9umsJEdGZJlUjFodnBQ4+NHiaLI/Ndq2kR2ZEiWSdgxaO4CDrCaDZElmfYUg+YOsJ48OyJLMu0pBs34bjVbSjK1oGdYFnRGZEFnRBZ0RmRBiyPt38o4Z5rLGZUFfVaQ5uOyhOby6+lYvMUFaV2Yy2vWjYMOj7bEXflWmotzaLekufJQ2o7pvDbVpbU2J96JufwXCkrz4u431OvwqCDuEmykrTnY/FNZOqrnS2iKQXf2FrBg98R74cil+f6l67yUQK/rNeo/go5eipfPS5v2OCUAhq3VhtDUKKhLUK19QU+fVtDBoXi5udhbhnSxI+5GWfzKqjQfwIOWS8I02a3tiLd8W3vV8qq0aiZ5hsilxZweq/rWpf2BHRqyjhhs/cUaO5dRdIqwvfFMwzxZx7h1SX/9n1BUF3+bGxdzwdvd7UMJzeYNq4moxb6nNemqHsDLF8Q/Rb+KFKvShgmRcyDeo8T4Sl2PXbwvXqVnM8Y/2hK/rSb6bN0c6OrPMNZ4yygRdB5hs4gFw0pHbH8/Ezd3BxFAe1X4Aoufx+IrPoEER8fS4euoIf6TeWkWj9W4kR49cS4tfxv3rxgDL8oYj8X9pSS+E5h5+wpKd6T5444u2rDpeD93l4Bgzttj8c9NJEBkcOPNRniwc7P3vv5ndPdrOsqFDQkVTI4F+E1TGIY18VZwjz19j8/VzYG+ykMI2uzwnjq78JhUYcTQegvh1FwmpMau7ZgcOgz6yrlU2E7fv0tPewygXPClBfGO6hp4BAi5efFO1TClsJIH+FFFnAambeHru9I6Vx1KIdPZyOKPY9Oh2y/CDmzm69DX9eiBjaA+GBd5oKlFGwzdbBNAT5wLUmH71wO51Jdpwcv83YcYj4hQw7WydcR85v5hFV4cF5y69UF/KrxpBf0pOXoAtPLCJ4dDYZPqPL2Hhd3qF3KMGFd59Ji5KL8I7/4z4c5DQnj+wYRn5dH3pfXWdCWlPie8HXlW3ytpyzC84UjT07SChnTVDePP6omq29FFzAjQOq+i8j3R+Y7qfmgor+MxqLmJwgkdUQDvLiDEDoB2n2twl/wzYS4NLh22JaiJf+JI1xAIX8FLmePp0ZDK0Sgee1+ssCpXubWB+yA8e6/0/8Mzvm886Lh2eG5OIqkcPaWgqaFz9Pc5afEcPQo0pCrleDyqT8JlRxs5tVepooJu7yP0xqCxqf5AzmRFjPe4e/qgPm6uiNGgcJgO2w4ArN01c6B9l+vnaEpV3YnUsYRNdKqpd3onB1bQvx9Ia2MCaGio6lb2Tjno/6P84m1U40l3nn1lDzTD9oPV1DErC8qkR2dRFnRGZEFnRBZ0RmRBZ0QWdEY0EjR/7G1/wD87GvsDfvtIzmxp7CM59iG72RDZkSFZjnzIjmIHdwEHMb7bNn2N7MgwCZlKgbaaXVnQmZDIP7V7nM87cvMuAAAAAElFTkSuQmCC" InformativeScreenshot="df585c0d64a544ed2901063ceea9970c.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/82jB0evV906lWmv5AuYWdg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </p:CVScope.Body>
+                    <p:CVScope.DesignTimeCache>
+                      <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+                    </p:CVScope.DesignTimeCache>
+                    <p:CVScope.DesignTimeCacheContainer>
+                      <uc:CvCacheContainer>
+                        <uc:CvCacheContainer.Caches>
+                          <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                            <uc:CVCache DisplayName="Screen CV Element Exists - 'Cr (Main)" Id="e89180fb-32cb-49be-8749-b9b7a2b31c4a" InformativeScreenshot="d44cb9363b145e4802fd983e3f153182" LogicalPosition="309, 206" OcrText="Create/Search Open Current Timesheet" Position="309, 206" ScreenshotGuid="c709c0f2-e43b-422f-a8c2-73ff4b1bff71" ServerVersion="1">
+                              <uc:CVCache.CvUiElements>
+                                <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="8">
+                                  <uc:CvElementInfo Category="Icon" Region="1139, 40, 21, 20" />
+                                  <uc:CvElementInfo Category="Button" Region="249, 31, 120, 35" />
+                                  <uc:CvElementInfo Category="Icon" Region="215, 41, 19, 21" />
+                                  <uc:CvElementInfo Category="Button" Region="1124, 31, 201, 34" />
+                                  <uc:CvElementInfo Category="InputBox" Region="23, 29, 223, 38" />
+                                  <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="24, 29, 225, 39" />
+                                </scg:List>
+                              </uc:CVCache.CvUiElements>
+                              <uc:CVCache.OcrTexts>
+                                <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="4">
+                                  <uc:OcrTextInfo Region="265, 40, 86, 15" Text="Create/Search" />
+                                  <uc:OcrTextInfo Region="1162, 42, 33, 15" Text="Open" />
+                                  <uc:OcrTextInfo Region="1196, 42, 48, 12" Text="Current" />
+                                  <uc:OcrTextInfo Region="1245, 41, 64, 13" Text="Timesheet" />
+                                </scg:List>
+                              </uc:CVCache.OcrTexts>
+                            </uc:CVCache>
+                          </scg:List>
+                        </uc:CvCacheContainer.Caches>
+                      </uc:CvCacheContainer>
+                    </p:CVScope.DesignTimeCacheContainer>
+                    <p:CVScope.OCREngine>
+                      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                        <ActivityFunc.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                        </ActivityFunc.Argument>
+                        <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+                      </ActivityFunc>
+                    </p:CVScope.OCREngine>
+                    <p:CVScope.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f6a65e1-5982-4b8d-8acd-d0e6d0f1035d" InformativeScreenshot="3f722127aded9a827c106340f3adff87" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetList/auraHtml' tag='DIV' /&gt;" WaitForReady="INTERACTIVE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </p:CVScope.Target>
+                    <p:CVScope.UseLocalServer>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </p:CVScope.UseLocalServer>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p:CVScope>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" ContentHash="rBpHoHforkqd9jokn-0eqA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZZBSBRRGMdHYolFJCJEJEQkJERCPISHCAlP0qGT5w7RwUNIhESEiAfxGJ46ONIpwmOIiHiQiAiRiOgUb6JTePLQIUQ6TL//25ndt85jXGmc7eDht2/3zbfv+79vvu+9L4jjuKOdnAv4fwUEq+ZCsBp1wmW4BFXN+Wz/hYwAHMkxDs0I431YgHl+TzHe0LNmu6gfrkEfNl1BGJ1KZJOA2q7NAIs9hm8QNzB/GL/CDAzCTZiFDfgMb+ERjEKnu24exwREPfASHMcZDhDzjvHLsfmUXbgHen1d0JugaGWiUxfAw4ssTJjNId99C58GCXwA0/CCNcFG7jawyUYuuQKUbOvgW7AoDCzCdbAiXAEKP+H1/rFoXkG/T8DvxKAMnkHFFXAFlM0+4+IJ7evotQKUFPxQaX2oG5TD3USADf8y/EoelMWTgA8dPiqXI+dBWcxIAPUffXImy2RcAqokRDt2/wO/3Qgw3HJeg7PmKVTSV/AzmSwJ84axzxYAXyqgCvAYFo35zrgEw+m1nZbhMHysGRVIaHS3vMbxCuNzmASVfPNlpAm4hSHGBd0Hob3YuP2MDjj1GDpp865jexqqs5kAdUJSvAd+Bw32YQt2QD3Ce5gDdVRV15mPuoD6hKIRqv+jRGp3+kn9gRJqDIZATvU6vbv1kRHgwiLqZLSbbJXUzo5NGIeK7/+tkC+ATCWR1KjcAXU126BkXYOHoPd7YpjzyBWQghOVqsJ6FVF0vzaT1fO1FOY8WhJwlpwLaLOAuOMveA1Of+TuOKQAAAAASUVORK5CYII=" InformativeScreenshot="4257fa716571a924c35d43df676be91a.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/iRwX_w0KB0qL1P-vzOw5-g" Selector="&lt;html app='msedge.exe' title='Home'/&gt;" Url="https://rev2.force.com/revature/s/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

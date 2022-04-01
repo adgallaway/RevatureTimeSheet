@@ -1,0 +1,18 @@
+﻿{
+  "Id": "fFecfU-zfkCfDBkjjxOixw",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/fFecfU-zfkCfDBkjjxOixw",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/Q4haCSnivUGAgKBZ7nAsrQ",
+  "Name": "Type Into User Name",
+  "Description": "Enters User Name from Credentials",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2022-02-25T15:23:04.4461377Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-04-01T15:41:12.9154079Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

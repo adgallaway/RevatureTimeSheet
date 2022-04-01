@@ -1,0 +1,13 @@
+﻿{
+  "Id": "s2ISieWZHkWx4sxm4fPAhQ",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/s2ISieWZHkWx4sxm4fPAhQ",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/iRwX_w0KB0qL1P-vzOw5-g",
+  "Name": "Info is Correct Checkbox",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Created": "2022-04-01T16:02:42.9884715Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-04-01T16:02:42.9884715Z"
+}

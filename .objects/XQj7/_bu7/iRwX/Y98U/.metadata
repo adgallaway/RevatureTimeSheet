@@ -1,0 +1,13 @@
+﻿{
+  "Id": "Y98UU0keEE6Y7xyRE0nHjw",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/Y98UU0keEE6Y7xyRE0nHjw",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/iRwX_w0KB0qL1P-vzOw5-g",
+  "Name": "Date Picker",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-04-01T15:57:13.6313042Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-04-01T15:57:13.6313042Z"
+}

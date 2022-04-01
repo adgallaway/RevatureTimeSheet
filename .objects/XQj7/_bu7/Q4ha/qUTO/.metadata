@@ -1,0 +1,15 @@
+﻿{
+  "Id": "qUTOE8x1d0ivu304eBsr1w",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/qUTOE8x1d0ivu304eBsr1w",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/Q4haCSnivUGAgKBZ7nAsrQ",
+  "Name": "Type Into Password",
+  "Description": "Enters Password",
+  "Type": "Element",
+  "TaxonomyType": "Password",
+  "Created": "2022-02-25T15:25:27.4062867Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.11.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T15:25:27.4062867Z"
+}

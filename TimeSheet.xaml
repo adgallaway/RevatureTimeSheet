@@ -1,0 +1,601 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TimeSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:SendSMS;assembly=SendSMS" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1182,4250</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>TimeSheet_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="43">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>SendSMS</x:String>
+      <x:String>UiPath.Twilio.Activities.Models</x:String>
+      <x:String>UiPath.Twilio.Activities</x:String>
+      <x:String>UiPath.ContactCenterIntegrations</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>SendSMS</AssemblyReference>
+      <AssemblyReference>UiPath.Twilio.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.ContactCenterIntegrations</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TimeSheet" sap:VirtualizedContainerService.HintSize="716,4185" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listOfHolidays" />
+      <Variable x:TypeArguments="x:String" Name="totalHours" />
+      <Variable x:TypeArguments="x:String" Name="weekEnding" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="monIsHoliday" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="thuIsHoldiay" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="friIsHoliday" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="List(Of Holidays)" sap:VirtualizedContainerService.HintSize="674,548" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_7" Item="1/17/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="5/30/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="7/4/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="9/5/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="11/24/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_5" Item="11/25/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_6" Item="12/26/22" />
+      <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_8" Item="1/2/23" />
+    </Sequence>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Timesheet" sap:VirtualizedContainerService.HintSize="674,3399" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="DebuggerApi" ScopeGuid="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do in Edge 'Timesheet'" sap:VirtualizedContainerService.HintSize="640,3263" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="monHoliday" />
+              <Variable x:TypeArguments="x:String" Name="thuHoliday" />
+              <Variable x:TypeArguments="x:String" Name="friHoliday" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Get dates to check if Holiday" sap:VirtualizedContainerService.HintSize="598,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGetText DisplayName="Get Text 'Monday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="KPXlrZlTdk-a-G-uObbEyA" DesignTimeRectangle="882, 283, 53, 20" ElementType="Text" FriendlyName="'Get Text 'Monday''" FullSelectorArgument="&lt;webctrl aaname='02/14/22' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="f0b7cffd-8889-448f-8d54-b65390883d19" InformativeScreenshot="4d59d5cc643d5c309a4d12c062ee389b.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/gBkim1y3tkiv2PIvm74wwQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="841, 263, 134, 20" ElementType="Text" FriendlyName="'Get Text 'Monday''" FullSelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Mon' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVGhD7Ze/a9tAHMX77x4BDwdBBExBixdnjAYRMKHOFjSEEJQlxEOdoYvALsEdkqGLoGTRUoIhvL47n2zlx3AdZd5nu+8dWt6Hd6cvECICiSKikCgiCokiopAoIgqJIqKQKCIKiSKi2G9R6hKpMTAmw/wlzF7myPwsRVmHWaD5VSIbDrjH/YHF6NsPPK/DpiN8z54tsR1X+aff2jf2WxQfooW1BnnVmVnOGPhkEWZkvZj42ejqN9avXP+hUIcU5niGJpzZiWcxfQgzibIH+BAzZCdsgfOVH63OLUyeI2fgW3mowuyYAtgplpSkpb5O30rRNsohv5FeonZnJUr/ae7GDDFH6QKnBCs8ojgyGN/NvCjZfXuBVH5tTua7K8XhJWDL3Dxv1kGU/Dvb5sDNaYdE6T+bRshRPRVITILi3gXtQt2IkV636f6nKGyi+mYEczDG7Fai9J76asgwJ1iGJklTinNUcPVelM+vnuaWMjjBnsKgIwpea1ymvIaSBAOJ0m+qU4aflnAZ+rcJQ04uHrliyF+5d7p9pOwesxcrNN3HLFvmbzjzRhQHm2rItRql53RFwc8pRWgfpjVKtkFXFEezKDB+/3vcaZgPopCNgBJFCI9EEVFIFBGFRBFRSBQRhUQRUUgUEYVEEREA/wCjQtsCg3m2UgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[monHoliday]</OutArgument>
+                </uix:NGetText.Text>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Thursday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="HqRqg71tO0eq7r8v12TzEA" DesignTimeRectangle="1333, 283, 51, 20" ElementType="Text" FriendlyName="'Get Text 'Thursday''" FullSelectorArgument="&lt;webctrl aaname='02/17/22' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="256eb895-f3f8-4408-b89d-2c17ed0969ea" InformativeScreenshot="292848c48448768cbc996a2f2197ac4e.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/SE-sEdE_mES1USicWf3fJQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1292, 263, 134, 20" ElementType="Text" FriendlyName="'Get Text 'Thursday''" FullSelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Thu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVGhD7dQviwJBAIbx+7rDgU0slglazBfkvoAGBYNMNVkNXr0rFywHYjEI8jrrrohu8IVru88PBnb+pX2YNwEGQoGFUGAhFFgIBRZCgYVQYCEUWBofym4ZFUKojfGm3N98FvOxqmm+kBTzflzubgtKMZ+JKX9VamearzUvShlMVHr6t4TiIRRCsRDKNZT6IJRHhMKLYiGUl6H8KQ2eQvmZqZfPfKxP1ULzEcrLUO53F79FGCd9T/sK7yOt9uV+GxCKEYrOB23nI/U6xdmgTneoydex2myH1oSC/yEUWAgFFkKBhVBgIRRYCAUWQoFBugB6PQ2rtyg0/QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[thuHoliday]</OutArgument>
+                </uix:NGetText.Text>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Friday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="AqSwUjL4yEyYlhzZvhQ_uA" DesignTimeRectangle="1483, 283, 53, 20" ElementType="Text" FriendlyName="'Get Text 'Friday''" FullSelectorArgument="&lt;webctrl aaname='02/18/22' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="17783f57-218e-4459-9c20-4bd500673066" InformativeScreenshot="7aa8be714485306cefff6be730d22ec2.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/ZvlpukCU802vivb8CA7fEw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1442, 263, 134, 20" ElementType="Text" FriendlyName="'Get Text 'Friday''" FullSelectorArgument="&lt;webctrl aaname='Fri' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fri' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Fri' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVGhD7dYhC8JQGIVh/+4QDMuWWywWg2XYxOYPWLBoUMRisFjMFkFWDIJ83rkx5hjzZO/7gKCcLe3lzp4BAkKBhFAgIRRICAUSQoGEUCAhFEgCC+VqqYssiuqfxI5tW39gbn6w2+szeuXuUv8tPGGG0vqwv7dsn1jsg5lssmLuvPf/EUqlsV1Tc/nJMivOG0IJihrK07IdJ0od/1GaJ0ZtGy5O9ihXQglK18Oubfe1jfs+lOWl3HKEEhAxFP/rvIj9qeIsrS4klIDoodh9ZaP8FTTdlq8fQgF+IhRICAUSQoGEUCAhFEgIBRJCgcDsDe1ZImTJ0MjRAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[friHoliday]</OutArgument>
+                </uix:NGetText.Text>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NGetText>
+            </Sequence>
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each item in List(Of Holidays)" sap:VirtualizedContainerService.HintSize="598,2245" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listOfHolidays]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="If day is Holiday" sap:VirtualizedContainerService.HintSize="562,2120" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[monIsHoliday = False]" DisplayName="If - Check if Monday is a Holiday" sap:VirtualizedContainerService.HintSize="520,849" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Then>
+                        <If Condition="[monHoliday = item.ToString]" DisplayName="If Monday is a Holiday" sap:VirtualizedContainerService.HintSize="484,661" sap2010:WorkflowViewState.IdRef="If_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="If True, Then Monday is a Holiday" sap:VirtualizedContainerService.HintSize="376,473" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Monday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_9" Text="0" Version="V1">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="85PIilLsU0eGw0Ra9zJwLw" DesignTimeRectangle="873, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="b66fa3de-2059-4af3-b9db-929a5f585c6a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7drNSgJRGMbx7mlWLgShdbtZuaobEIS6hmglLVqFQbjJXa28BzcxrSxNd32ACxMiBeVpnubDGXE878B4IHx/IDidw4HzbxxdnAMoEQ0llAo1m/3g4/0Nw0Efr/2XvXxx72zAFklxKA5w0tdkguVyGf51/3DvbMAWyVhxKFbkBBVgCzaJxKFYcJ/vpHVswSaROBQ/nyot2URDbaGhhDSUkIYS0lBCGkpIQwlpKCF7ob6HuD8/QcVx4By6OLvuYrwIx9aZ5uZZqyCWQo3RqVdQu+thyg3N/Y3WS3BvesFwimlunrWKYyfUcxNH5Qa85H991Ea1fIHuPLyOmObmWatAVkKNH2pw6h3/XkhYdNFwqmiPwuuQaW6etYpkL9SlF15FPH9zDhqP4WXINDfPWkXSO0rISig8XaF01EQv+Vz5e9ZseK6Y5uZZq0B2Qi2GaB+Xsr+p/I265Ro6n/5701zT+I7YCUVTD61Td/Xb59YLNkqD1ioUbZtLpvEdsBfqn9NQQhpKSEMJaSghDSWkoYQ0lJCGEtJQQhtD6SGNtMxDGnrsJy3z2I8eJAtw72zAFhsPkhEHWJGT+Pncxxf3zgbJSJQKpbJpKBHgFzT1HC/waFwwAAAAAElFTkSuQmCC" InformativeScreenshot="b69666f96a8d9552cd02912ed29b34ca.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/2r5Tq72YjEivBgTOUjAZwg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                        <uix:Target DesignTimeRectangle="841, 263, 134, 20" ElementType="Text" FriendlyName="'Mon'" FullSelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Mon' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVGhD7Ze/a9tAHMX77x4BDwdBBExBixdnjAYRMKHOFjSEEJQlxEOdoYvALsEdkqGLoGTRUoIhvL47n2zlx3AdZd5nu+8dWt6Hd6cvECICiSKikCgiCokiopAoIgqJIqKQKCIKiSKi2G9R6hKpMTAmw/wlzF7myPwsRVmHWaD5VSIbDrjH/YHF6NsPPK/DpiN8z54tsR1X+aff2jf2WxQfooW1BnnVmVnOGPhkEWZkvZj42ejqN9avXP+hUIcU5niGJpzZiWcxfQgzibIH+BAzZCdsgfOVH63OLUyeI2fgW3mowuyYAtgplpSkpb5O30rRNsohv5FeonZnJUr/ae7GDDFH6QKnBCs8ojgyGN/NvCjZfXuBVH5tTua7K8XhJWDL3Dxv1kGU/Dvb5sDNaYdE6T+bRshRPRVITILi3gXtQt2IkV636f6nKGyi+mYEczDG7Fai9J76asgwJ1iGJklTinNUcPVelM+vnuaWMjjBnsKgIwpea1ymvIaSBAOJ0m+qU4aflnAZ+rcJQ04uHrliyF+5d7p9pOwesxcrNN3HLFvmbzjzRhQHm2rItRql53RFwc8pRWgfpjVKtkFXFEezKDB+/3vcaZgPopCNgBJFCI9EEVFIFBGFRBFRSBQRhUQRUUgUEYVEEREA/wCjQtsCg3m2UgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                        <uix:Target DesignTimeRectangle="873, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='4' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7drNSgJRGMbx7mlWLgShdbtZuaobEIS6hmglLVqFQbjJXa28BzcxrSxNd32ACxMiBeVpnubDGXE878B4IHx/IDidw4HzbxxdnAMoEQ0llAo1m/3g4/0Nw0Efr/2XvXxx72zAFklxKA5w0tdkguVyGf51/3DvbMAWyVhxKFbkBBVgCzaJxKFYcJ/vpHVswSaROBQ/nyot2URDbaGhhDSUkIYS0lBCGkpIQwlpKCF7ob6HuD8/QcVx4By6OLvuYrwIx9aZ5uZZqyCWQo3RqVdQu+thyg3N/Y3WS3BvesFwimlunrWKYyfUcxNH5Qa85H991Ea1fIHuPLyOmObmWatAVkKNH2pw6h3/XkhYdNFwqmiPwuuQaW6etYpkL9SlF15FPH9zDhqP4WXINDfPWkXSO0rISig8XaF01EQv+Vz5e9ZseK6Y5uZZq0B2Qi2GaB+Xsr+p/I265Ro6n/5701zT+I7YCUVTD61Td/Xb59YLNkqD1ioUbZtLpvEdsBfqn9NQQhpKSEMJaSghDSWkoYQ0lJCGEtJQQhtD6SGNtMxDGnrsJy3z2I8eJAtw72zAFhsPkhEHWJGT+Pncxxf3zgbJSJQKpbJpKBHgFzT1HC/waFwwAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                              <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[monIsHoliday]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </If.Then>
+                    </If>
+                    <If Condition="[thuIsHoldiay = False]" DisplayName="If - Check if Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="520,849" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If.Then>
+                        <If Condition="[thuHoliday = item.ToString]" DisplayName="If Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="484,661" sap2010:WorkflowViewState.IdRef="If_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="If True, Then Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="376,473" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Thursday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_10" Text="0" Version="V1">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="tZdlHbt2dk6dw9DwFYZJiQ" DesignTimeRectangle="1324, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='7' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="79ad22ef-bbc6-43f4-a225-7e98a4ce0b00" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7do/S8NAGMdx39NNGVwFZ/sGiouLAQcXnZxKpk7FyVcgSDu1S7cKglM72uog1D8QsHaxHcpjf+YSL7bpPYH0QPJ8oMP1joP7klSH2yHBIqGYUqFmsy96e32hp9GQHocPpfzg7GiAFqYkFCaw6HMyocViob8tH5wdDdDCjJWEQkUsEBG0QJNYEgoFy/wk/YUWaBJLQuH9FGlmEwm1gYRiklBMEopJQjFJKCYJxSShmJyFCu+vyN/3SCmP9g4Dao7memaVbW2evYriJNR80KDKQUC992g8vatTZfecuh/R2GRbm2evIjkINaXumSK/FeoxzKlXU1S9HutxzLY2z17FchCqT/XlK9IY6KE2vjkiVestj2myrc2zV7EchfKpqV+VWNjySR03yXw27Gvz7FUseaKYHIQKqX2i6LQz1WOIfmtWf1dsa/PsVSwHoZY/t7cBeZl/qXBQjyqX/Z8nYvNa+/y2OAkF405AVeN/n/aznkCoi99QkL02YpvfBmeh/jsJxSShmCQUk4RiklBMEopJQjFJKCYJxbQ2lFzSSMu8pCHXftIyr/3IRbIIzo4GaLH2IhlgAhWxCO9nGT84OxqYkSAVSmSTUCxE395GHJNsuv78AAAAAElFTkSuQmCC" InformativeScreenshot="984a8b8f6ae0498b4a44eccc49c1ff05.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/RK4wW8N0SkmTCWUrvBEaCA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                        <uix:Target DesignTimeRectangle="1292, 263, 134, 20" ElementType="Text" FriendlyName="'Thu'" FullSelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Thu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVGhD7dQviwJBAIbx+7rDgU0slglazBfkvoAGBYNMNVkNXr0rFywHYjEI8jrrrohu8IVru88PBnb+pX2YNwEGQoGFUGAhFFgIBRZCgYVQYCEUWBofym4ZFUKojfGm3N98FvOxqmm+kBTzflzubgtKMZ+JKX9VamearzUvShlMVHr6t4TiIRRCsRDKNZT6IJRHhMKLYiGUl6H8KQ2eQvmZqZfPfKxP1ULzEcrLUO53F79FGCd9T/sK7yOt9uV+GxCKEYrOB23nI/U6xdmgTneoydex2myH1oSC/yEUWAgFFkKBhVBgIRRYCAUWQoFBugB6PQ2rtyg0/QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                        <uix:Target DesignTimeRectangle="1324, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='7' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7do/S8NAGMdx39NNGVwFZ/sGiouLAQcXnZxKpk7FyVcgSDu1S7cKglM72uog1D8QsHaxHcpjf+YSL7bpPYH0QPJ8oMP1joP7klSH2yHBIqGYUqFmsy96e32hp9GQHocPpfzg7GiAFqYkFCaw6HMyocViob8tH5wdDdDCjJWEQkUsEBG0QJNYEgoFy/wk/YUWaBJLQuH9FGlmEwm1gYRiklBMEopJQjFJKCYJxSShmJyFCu+vyN/3SCmP9g4Dao7memaVbW2evYriJNR80KDKQUC992g8vatTZfecuh/R2GRbm2evIjkINaXumSK/FeoxzKlXU1S9HutxzLY2z17FchCqT/XlK9IY6KE2vjkiVestj2myrc2zV7EchfKpqV+VWNjySR03yXw27Gvz7FUseaKYHIQKqX2i6LQz1WOIfmtWf1dsa/PsVSwHoZY/t7cBeZl/qXBQjyqX/Z8nYvNa+/y2OAkF405AVeN/n/aznkCoi99QkL02YpvfBmeh/jsJxSShmCQUk4RiklBMEopJQjFJKCYJxbQ2lFzSSMu8pCHXftIyr/3IRbIIzo4GaLH2IhlgAhWxCO9nGT84OxqYkSAVSmSTUCxE395GHJNsuv78AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                              <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[thuIsHoldiay]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[friIsHoliday = False]" DisplayName="If - Check if Friday is a Holiday" sap:VirtualizedContainerService.HintSize="520,248" sap2010:WorkflowViewState.IdRef="If_6">
+                      <If.Then>
+                        <If Condition="[friHoliday = item.ToString]" DisplayName="If Friday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="If True, Then Friday is a Holiday" sap:VirtualizedContainerService.HintSize="376,473" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Friday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_11" Text="0" Version="V1">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="fMBNf53Y9EuwZKBBgrPIAQ" DesignTimeRectangle="1474, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='8' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="eace361f-3ce5-4532-bb32-49aead3771fc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVGhD7Zoxa9tAFMf7nW7SYAgUCh0y2VOhUJOlSwQZvLQfIKiL6BA6FAdClppAUYbiLNlcKPUQ7MlpXAcKThsQJPHSaDD/3POdnZNrW2+RoPj9QMPz/2x4P+tOGt4TCCxEFJOUqPv7v/jz+wqD/gV+XvxYy4t6JwfkwmUmigJadHd7i/F4bD9dP6h3ckAuXFkzUWSRFggGckFOpsxEkcF1vpPmIRfkZMpMFO1PIY3rREStQEQxEVFMRBQTEcVERDERUUxEFJPCRMXtOvznHpTy8GwrQNRPbPIvST9C8GpDr1XYKNdQb8c2MWTleVCIqKS7h0o5QOva1KNvISqltzi9MXWK6yb8pz4a56NJmVxG8EsV1M8nZXaeEwWIGuH0jYJ/7P7rCVq7CtWjoa0f6e1vwnvfsZVh8OkFvHff9bey87woQFQHod5ue11bWoafX0PttuaaixFta6lf5rZSO4R62cAgM8+PgkT5iOy2mxIf+1DbkW7dxYgIz2w55UyLUKH+paw8P+SOYlKAqBjNHYXaiTl8DebcWnRGdT542PzYs5Vhci7ZMygrz4sCROmj+2sAb8VTr7dfgbfT1Eo1lw1USyueall5ThQiihieBKg671HNXzbQDA4cUZpR9xC18uN70mHXvRuz8zwoTNT/johiIqKYiCgmIoqJiGIiopiIKCYiiomIYrJQlAxppFk6pCFjP2mWjv3IIJmBeicH5GLhIBlBAVmkRbQ/1/Gi3smBK4lIiRKWI6JYAA/jYhxxA0Xa6gAAAABJRU5ErkJggg==" InformativeScreenshot="a1745a14ee92e5d13ce7060b6abe0b7d.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/TnH1YecIU0K4gePXvzXRaQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                        <uix:Target DesignTimeRectangle="1442, 263, 134, 20" ElementType="Text" FriendlyName="'Fri'" FullSelectorArgument="&lt;webctrl aaname='Fri' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fri' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Fri' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVGhD7dYhC8JQGIVh/+4QDMuWWywWg2XYxOYPWLBoUMRisFjMFkFWDIJ83rkx5hjzZO/7gKCcLe3lzp4BAkKBhFAgIRRICAUSQoGEUCAhFEgCC+VqqYssiuqfxI5tW39gbn6w2+szeuXuUv8tPGGG0vqwv7dsn1jsg5lssmLuvPf/EUqlsV1Tc/nJMivOG0IJihrK07IdJ0od/1GaJ0ZtGy5O9ihXQglK18Oubfe1jfs+lOWl3HKEEhAxFP/rvIj9qeIsrS4klIDoodh9ZaP8FTTdlq8fQgF+IhRICAUSQoGEUCAhFEgIBRJCgcDsDe1ZImTJ0MjRAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        <uix:Target DesignTimeRectangle="1474, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='8' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVGhD7Zoxa9tAFMf7nW7SYAgUCh0y2VOhUJOlSwQZvLQfIKiL6BA6FAdClppAUYbiLNlcKPUQ7MlpXAcKThsQJPHSaDD/3POdnZNrW2+RoPj9QMPz/2x4P+tOGt4TCCxEFJOUqPv7v/jz+wqD/gV+XvxYy4t6JwfkwmUmigJadHd7i/F4bD9dP6h3ckAuXFkzUWSRFggGckFOpsxEkcF1vpPmIRfkZMpMFO1PIY3rREStQEQxEVFMRBQTEcVERDERUUxEFJPCRMXtOvznHpTy8GwrQNRPbPIvST9C8GpDr1XYKNdQb8c2MWTleVCIqKS7h0o5QOva1KNvISqltzi9MXWK6yb8pz4a56NJmVxG8EsV1M8nZXaeEwWIGuH0jYJ/7P7rCVq7CtWjoa0f6e1vwnvfsZVh8OkFvHff9bey87woQFQHod5ue11bWoafX0PttuaaixFta6lf5rZSO4R62cAgM8+PgkT5iOy2mxIf+1DbkW7dxYgIz2w55UyLUKH+paw8P+SOYlKAqBjNHYXaiTl8DebcWnRGdT542PzYs5Vhci7ZMygrz4sCROmj+2sAb8VTr7dfgbfT1Eo1lw1USyueall5ThQiihieBKg671HNXzbQDA4cUZpR9xC18uN70mHXvRuz8zwoTNT/johiIqKYiCgmIoqJiGIiopiIKCYiiomIYrJQlAxppFk6pCFjP2mWjv3IIJmBeicH5GLhIBlBAVmkRbQ/1/Gi3smBK4lIiRKWI6JYAA/jYhxxA0Xa6gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                              <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[friIsHoliday]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_3" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <Sequence DisplayName="If not a Holiday, then enter hours" sap:VirtualizedContainerService.HintSize="598,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[monIsHoliday = False]" DisplayName="If - Enter hours if Monday is not a Holiday" sap:VirtualizedContainerService.HintSize="484,404" sap2010:WorkflowViewState.IdRef="If_7">
+                <If.Then>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Monday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_12" Text="8" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="85PIilLsU0eGw0Ra9zJwLw" DesignTimeRectangle="873, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="b66fa3de-2059-4af3-b9db-929a5f585c6a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7drNSgJRGMbx7mlWLgShdbtZuaobEIS6hmglLVqFQbjJXa28BzcxrSxNd32ACxMiBeVpnubDGXE878B4IHx/IDidw4HzbxxdnAMoEQ0llAo1m/3g4/0Nw0Efr/2XvXxx72zAFklxKA5w0tdkguVyGf51/3DvbMAWyVhxKFbkBBVgCzaJxKFYcJ/vpHVswSaROBQ/nyot2URDbaGhhDSUkIYS0lBCGkpIQwlpKCF7ob6HuD8/QcVx4By6OLvuYrwIx9aZ5uZZqyCWQo3RqVdQu+thyg3N/Y3WS3BvesFwimlunrWKYyfUcxNH5Qa85H991Ea1fIHuPLyOmObmWatAVkKNH2pw6h3/XkhYdNFwqmiPwuuQaW6etYpkL9SlF15FPH9zDhqP4WXINDfPWkXSO0rISig8XaF01EQv+Vz5e9ZseK6Y5uZZq0B2Qi2GaB+Xsr+p/I265Ro6n/5701zT+I7YCUVTD61Td/Xb59YLNkqD1ioUbZtLpvEdsBfqn9NQQhpKSEMJaSghDSWkoYQ0lJCGEtJQQhtD6SGNtMxDGnrsJy3z2I8eJAtw72zAFhsPkhEHWJGT+Pncxxf3zgbJSJQKpbJpKBHgFzT1HC/waFwwAAAAAElFTkSuQmCC" InformativeScreenshot="b69666f96a8d9552cd02912ed29b34ca.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/2r5Tq72YjEivBgTOUjAZwg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target DesignTimeRectangle="841, 263, 134, 20" ElementType="Text" FriendlyName="'Mon'" FullSelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Mon' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Mon' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVGhD7Ze/a9tAHMX77x4BDwdBBExBixdnjAYRMKHOFjSEEJQlxEOdoYvALsEdkqGLoGTRUoIhvL47n2zlx3AdZd5nu+8dWt6Hd6cvECICiSKikCgiCokiopAoIgqJIqKQKCIKiSKi2G9R6hKpMTAmw/wlzF7myPwsRVmHWaD5VSIbDrjH/YHF6NsPPK/DpiN8z54tsR1X+aff2jf2WxQfooW1BnnVmVnOGPhkEWZkvZj42ejqN9avXP+hUIcU5niGJpzZiWcxfQgzibIH+BAzZCdsgfOVH63OLUyeI2fgW3mowuyYAtgplpSkpb5O30rRNsohv5FeonZnJUr/ae7GDDFH6QKnBCs8ojgyGN/NvCjZfXuBVH5tTua7K8XhJWDL3Dxv1kGU/Dvb5sDNaYdE6T+bRshRPRVITILi3gXtQt2IkV636f6nKGyi+mYEczDG7Fai9J76asgwJ1iGJklTinNUcPVelM+vnuaWMjjBnsKgIwpea1ymvIaSBAOJ0m+qU4aflnAZ+rcJQ04uHrliyF+5d7p9pOwesxcrNN3HLFvmbzjzRhQHm2rItRql53RFwc8pRWgfpjVKtkFXFEezKDB+/3vcaZgPopCNgBJFCI9EEVFIFBGFRBFRSBQRhUQRUUgUEYVEEREA/wCjQtsCg3m2UgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                            <uix:Target DesignTimeRectangle="873, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='4' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7drNSgJRGMbx7mlWLgShdbtZuaobEIS6hmglLVqFQbjJXa28BzcxrSxNd32ACxMiBeVpnubDGXE878B4IHx/IDidw4HzbxxdnAMoEQ0llAo1m/3g4/0Nw0Efr/2XvXxx72zAFklxKA5w0tdkguVyGf51/3DvbMAWyVhxKFbkBBVgCzaJxKFYcJ/vpHVswSaROBQ/nyot2URDbaGhhDSUkIYS0lBCGkpIQwlpKCF7ob6HuD8/QcVx4By6OLvuYrwIx9aZ5uZZqyCWQo3RqVdQu+thyg3N/Y3WS3BvesFwimlunrWKYyfUcxNH5Qa85H991Ea1fIHuPLyOmObmWatAVkKNH2pw6h3/XkhYdNFwqmiPwuuQaW6etYpkL9SlF15FPH9zDhqP4WXINDfPWkXSO0rISig8XaF01EQv+Vz5e9ZseK6Y5uZZq0B2Qi2GaB+Xsr+p/I265Ro6n/5701zT+I7YCUVTD61Td/Xb59YLNkqD1ioUbZtLpvEdsBfqn9NQQhpKSEMJaSghDSWkoYQ0lJCGEtJQQhtD6SGNtMxDGnrsJy3z2I8eJAtw72zAFhsPkhEHWJGT+Pncxxf3zgbJSJQKpbJpKBHgFzT1HC/waFwwAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[thuIsHoldiay = False]" DisplayName="If - Enter hours if Thursday is not a Holiday" sap:VirtualizedContainerService.HintSize="484,404" sap2010:WorkflowViewState.IdRef="If_8">
+                <If.Then>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Thursday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_13" Text="8" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="tZdlHbt2dk6dw9DwFYZJiQ" DesignTimeRectangle="1324, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='7' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="79ad22ef-bbc6-43f4-a225-7e98a4ce0b00" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7do/S8NAGMdx39NNGVwFZ/sGiouLAQcXnZxKpk7FyVcgSDu1S7cKglM72uog1D8QsHaxHcpjf+YSL7bpPYH0QPJ8oMP1joP7klSH2yHBIqGYUqFmsy96e32hp9GQHocPpfzg7GiAFqYkFCaw6HMyocViob8tH5wdDdDCjJWEQkUsEBG0QJNYEgoFy/wk/YUWaBJLQuH9FGlmEwm1gYRiklBMEopJQjFJKCYJxSShmJyFCu+vyN/3SCmP9g4Dao7memaVbW2evYriJNR80KDKQUC992g8vatTZfecuh/R2GRbm2evIjkINaXumSK/FeoxzKlXU1S9HutxzLY2z17FchCqT/XlK9IY6KE2vjkiVestj2myrc2zV7EchfKpqV+VWNjySR03yXw27Gvz7FUseaKYHIQKqX2i6LQz1WOIfmtWf1dsa/PsVSwHoZY/t7cBeZl/qXBQjyqX/Z8nYvNa+/y2OAkF405AVeN/n/aznkCoi99QkL02YpvfBmeh/jsJxSShmCQUk4RiklBMEopJQjFJKCYJxbQ2lFzSSMu8pCHXftIyr/3IRbIIzo4GaLH2IhlgAhWxCO9nGT84OxqYkSAVSmSTUCxE395GHJNsuv78AAAAAElFTkSuQmCC" InformativeScreenshot="984a8b8f6ae0498b4a44eccc49c1ff05.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/RK4wW8N0SkmTCWUrvBEaCA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target DesignTimeRectangle="1292, 263, 134, 20" ElementType="Text" FriendlyName="'Thu'" FullSelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Thu' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Thu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVGhD7dQviwJBAIbx+7rDgU0slglazBfkvoAGBYNMNVkNXr0rFywHYjEI8jrrrohu8IVru88PBnb+pX2YNwEGQoGFUGAhFFgIBRZCgYVQYCEUWBofym4ZFUKojfGm3N98FvOxqmm+kBTzflzubgtKMZ+JKX9VamearzUvShlMVHr6t4TiIRRCsRDKNZT6IJRHhMKLYiGUl6H8KQ2eQvmZqZfPfKxP1ULzEcrLUO53F79FGCd9T/sK7yOt9uV+GxCKEYrOB23nI/U6xdmgTneoydex2myH1oSC/yEUWAgFFkKBhVBgIRRYCAUWQoFBugB6PQ2rtyg0/QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                            <uix:Target DesignTimeRectangle="1324, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='7' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVGhD7do/S8NAGMdx39NNGVwFZ/sGiouLAQcXnZxKpk7FyVcgSDu1S7cKglM72uog1D8QsHaxHcpjf+YSL7bpPYH0QPJ8oMP1joP7klSH2yHBIqGYUqFmsy96e32hp9GQHocPpfzg7GiAFqYkFCaw6HMyocViob8tH5wdDdDCjJWEQkUsEBG0QJNYEgoFy/wk/YUWaBJLQuH9FGlmEwm1gYRiklBMEopJQjFJKCYJxSShmJyFCu+vyN/3SCmP9g4Dao7memaVbW2evYriJNR80KDKQUC992g8vatTZfecuh/R2GRbm2evIjkINaXumSK/FeoxzKlXU1S9HutxzLY2z17FchCqT/XlK9IY6KE2vjkiVestj2myrc2zV7EchfKpqV+VWNjySR03yXw27Gvz7FUseaKYHIQKqX2i6LQz1WOIfmtWf1dsa/PsVSwHoZY/t7cBeZl/qXBQjyqX/Z8nYvNa+/y2OAkF405AVeN/n/aznkCoi99QkL02YpvfBmeh/jsJxSShmCQUk4RiklBMEopJQjFJKCYJxbQ2lFzSSMu8pCHXftIyr/3IRbIIzo4GaLH2IhlgAhWxCO9nGT84OxqYkSAVSmSTUCxE395GHJNsuv78AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[friIsHoliday = False]" DisplayName="If - Enter hours if Friday is not a Holiday" sap:VirtualizedContainerService.HintSize="484,404" sap2010:WorkflowViewState.IdRef="If_9">
+                <If.Then>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Friday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_14" Text="8" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="fMBNf53Y9EuwZKBBgrPIAQ" DesignTimeRectangle="1474, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='8' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="eace361f-3ce5-4532-bb32-49aead3771fc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVGhD7Zoxa9tAFMf7nW7SYAgUCh0y2VOhUJOlSwQZvLQfIKiL6BA6FAdClppAUYbiLNlcKPUQ7MlpXAcKThsQJPHSaDD/3POdnZNrW2+RoPj9QMPz/2x4P+tOGt4TCCxEFJOUqPv7v/jz+wqD/gV+XvxYy4t6JwfkwmUmigJadHd7i/F4bD9dP6h3ckAuXFkzUWSRFggGckFOpsxEkcF1vpPmIRfkZMpMFO1PIY3rREStQEQxEVFMRBQTEcVERDERUUxEFJPCRMXtOvznHpTy8GwrQNRPbPIvST9C8GpDr1XYKNdQb8c2MWTleVCIqKS7h0o5QOva1KNvISqltzi9MXWK6yb8pz4a56NJmVxG8EsV1M8nZXaeEwWIGuH0jYJ/7P7rCVq7CtWjoa0f6e1vwnvfsZVh8OkFvHff9bey87woQFQHod5ue11bWoafX0PttuaaixFta6lf5rZSO4R62cAgM8+PgkT5iOy2mxIf+1DbkW7dxYgIz2w55UyLUKH+paw8P+SOYlKAqBjNHYXaiTl8DebcWnRGdT542PzYs5Vhci7ZMygrz4sCROmj+2sAb8VTr7dfgbfT1Eo1lw1USyueall5ThQiihieBKg671HNXzbQDA4cUZpR9xC18uN70mHXvRuz8zwoTNT/johiIqKYiCgmIoqJiGIiopiIKCYiiomIYrJQlAxppFk6pCFjP2mWjv3IIJmBeicH5GLhIBlBAVmkRbQ/1/Gi3smBK4lIiRKWI6JYAA/jYhxxA0Xa6gAAAABJRU5ErkJggg==" InformativeScreenshot="a1745a14ee92e5d13ce7060b6abe0b7d.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/TnH1YecIU0K4gePXvzXRaQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target DesignTimeRectangle="1442, 263, 134, 20" ElementType="Text" FriendlyName="'Fri'" FullSelectorArgument="&lt;webctrl aaname='Fri' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fri' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Fri' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVGhD7dYhC8JQGIVh/+4QDMuWWywWg2XYxOYPWLBoUMRisFjMFkFWDIJ83rkx5hjzZO/7gKCcLe3lzp4BAkKBhFAgIRRICAUSQoGEUCAhFEgCC+VqqYssiuqfxI5tW39gbn6w2+szeuXuUv8tPGGG0vqwv7dsn1jsg5lssmLuvPf/EUqlsV1Tc/nJMivOG0IJihrK07IdJ0od/1GaJ0ZtGy5O9ihXQglK18Oubfe1jfs+lOWl3HKEEhAxFP/rvIj9qeIsrS4klIDoodh9ZaP8FTTdlq8fQgF+IhRICAUSQoGEUCAhFEgIBRJCgcDsDe1ZImTJ0MjRAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            <uix:Target DesignTimeRectangle="1474, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='8' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVGhD7Zoxa9tAFMf7nW7SYAgUCh0y2VOhUJOlSwQZvLQfIKiL6BA6FAdClppAUYbiLNlcKPUQ7MlpXAcKThsQJPHSaDD/3POdnZNrW2+RoPj9QMPz/2x4P+tOGt4TCCxEFJOUqPv7v/jz+wqD/gV+XvxYy4t6JwfkwmUmigJadHd7i/F4bD9dP6h3ckAuXFkzUWSRFggGckFOpsxEkcF1vpPmIRfkZMpMFO1PIY3rREStQEQxEVFMRBQTEcVERDERUUxEFJPCRMXtOvznHpTy8GwrQNRPbPIvST9C8GpDr1XYKNdQb8c2MWTleVCIqKS7h0o5QOva1KNvISqltzi9MXWK6yb8pz4a56NJmVxG8EsV1M8nZXaeEwWIGuH0jYJ/7P7rCVq7CtWjoa0f6e1vwnvfsZVh8OkFvHff9bey87woQFQHod5ue11bWoafX0PttuaaixFta6lf5rZSO4R62cAgM8+PgkT5iOy2mxIf+1DbkW7dxYgIz2w55UyLUKH+paw8P+SOYlKAqBjNHYXaiTl8DebcWnRGdT542PzYs5Vhci7ZMygrz4sCROmj+2sAb8VTr7dfgbfT1Eo1lw1USyueall5ThQiihieBKg671HNXzbQDA4cUZpR9xC18uN70mHXvRuz8zwoTNT/johiIqKYiCgmIoqJiGIiopiIKCYiiomIYrJQlAxppFk6pCFjP2mWjv3IIJmBeicH5GLhIBlBAVmkRbQ/1/Gi3smBK4lIiRKWI6JYAA/jYhxxA0Xa6gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <Sequence DisplayName="Enter hours for Tuesday &amp; Wednesday" sap:VirtualizedContainerService.HintSize="598,566" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tuesday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="8" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="CwfciHL5h0i6GkNFmLtOSg" DesignTimeRectangle="1023, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='5' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="fe27d6d6-e152-4596-a235-f6c754501488" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVGhD7dq9asJQGMbx3lMmB1evwBtw6qRbl3brInYpHaRDr6BbOjm52cWl2LG2DgX7AQGtUKqgPM3THEMixvMG4oHi+wOHY14OnD/xY8gRlIiGEkqFms9/8PH+htHzEC/Dp4N88exswBZJcShe4NDXdIrVamXePTw8OxuwRTJWHIoVOaAibMEma3EoFjzkO2kTW7DJWhyKn0+VlmyioXbQUEIaSkhDCWkoIQ0lpKGENJSQu1DLAP2bBiplD165glrTx+jbXNtkm82zV0EchVpgcF1F9aKHYBkulzP0r6oonXYxiwYSbLN59iqOm1CzLs68BvxPs6ZFDy2vhttXs16zzebZq0BuQj1chh+RNgZmGRnDP/bQul+YtWGbzbNXgdyFqvsIzDISwK97aNyl37XO5tmrQHpHCbkJFXTQ8E7QmZg1/X3XbPlesc3m2atAbkKFv1S9Zin7l2oSHrRcRfuRd4Rl1np9PxyFCi3H6DRrif8+HYx5UArviPM4VGjXLNmu74G7UP+chhLSUEIaSkhDCWkoIQ0lpKGENJSQhhLaGkof0kjLfEhDH/tJy3zsRx8ki/DsbMAWWx8kI15gRQ7x83mIL56dDZKRKBVKZdNQIsAv1TEcXzSm1YUAAAAASUVORK5CYII=" InformativeScreenshot="a20977a08093d3367a78f7bd91e5b4fe.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/Vo9PLN4370qceyIyFqJl9Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                        <uix:Target DesignTimeRectangle="991, 263, 134, 20" ElementType="Text" FriendlyName="'Tue'" FullSelectorArgument="&lt;webctrl aaname='Tue' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Tue' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Tue' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD7SURBVGhD7dYvC8JAHIdx3+4Vg8ViuSIGq8F3IIjBIFctZoPZYhnYLCKWr3fzFB2KP43e84Ex7s9W9rCtJcCAUGBCKDAhFJgQCkwIBSaEAhNCgUkhoVQK3sm55jHWul4O8nHsF1W9O6kWPq57hdtU3vN0vQ/xzmUo7I2Sg2k+4C9CedxTEkJJCOUjQkm+COXx01NSNISS8Eb5iFCSfVC/EcF22o2hjLQ65QlCKcmbUO7zc+3OcXjeatKL4+FSh+sGQsnnQrwLJTpsNBt21Y4xONdWZzDR5pjXkhf/KC/v86cKCwW/IhSYEApMCAUmhAITQoEJocCEUGAgXQDPqhkNOku7mQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                        <uix:Target DesignTimeRectangle="1023, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='5' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVGhD7dq9asJQGMbx3lMmB1evwBtw6qRbl3brInYpHaRDr6BbOjm52cWl2LG2DgX7AQGtUKqgPM3THEMixvMG4oHi+wOHY14OnD/xY8gRlIiGEkqFms9/8PH+htHzEC/Dp4N88exswBZJcShe4NDXdIrVamXePTw8OxuwRTJWHIoVOaAibMEma3EoFjzkO2kTW7DJWhyKn0+VlmyioXbQUEIaSkhDCWkoIQ0lpKGENJSQu1DLAP2bBiplD165glrTx+jbXNtkm82zV0EchVpgcF1F9aKHYBkulzP0r6oonXYxiwYSbLN59iqOm1CzLs68BvxPs6ZFDy2vhttXs16zzebZq0BuQj1chh+RNgZmGRnDP/bQul+YtWGbzbNXgdyFqvsIzDISwK97aNyl37XO5tmrQHpHCbkJFXTQ8E7QmZg1/X3XbPlesc3m2atAbkKFv1S9Zin7l2oSHrRcRfuRd4Rl1np9PxyFCi3H6DRrif8+HYx5UArviPM4VGjXLNmu74G7UP+chhLSUEIaSkhDCWkoIQ0lpKGENJSQhhLaGkof0kjLfEhDH/tJy3zsRx8ki/DsbMAWWx8kI15gRQ7x83mIL56dDZKRKBVKZdNQIsAv1TEcXzSm1YUAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Wednesday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_8" Text="8[k(enter)]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="2h9L7S1FBEysM2__s957Nw" DesignTimeRectangle="1174, 321, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='6' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' tag='INPUT' aaname='' /&gt;" Guid="1e5b8d1e-2c73-4fe5-97f2-1bb3fd7e5136" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIwSURBVGhD7Zq/S+RQEMf9n16VYtuFq80/ECzOxoCFjXY2S65ZrliuOPwD5ECyVWy2i3BoIWupnoWQ+wEBNSBnYJfvvdmXDS9h10xxWdCdD6SYndnifZg3STEbEFiIKCYVUS8vf/H710/c3d7gx831Wj50dnJALmxKUZSgoqfHR0yn0+LX9YPOTg7IhS2rFEUWqUAwkAtyMqcURQbXuZPqkAtyMqcURfdTqGI7EVGvIKKYiCgmIoqJiGIiopiIKCYiislqRE1SnH/10e0oqE4XXi/E3XORq8OoTS+O4H9woJSD7laA8DYvMu2xAlE5xl9cuJ9ipBMdTjKcf3bh7I+QmQKL5tr8agB3M0D8x8TZ9z7czgFGDyZui/ZFZSMcKB9hcbAZeYxAeTi+L+I5jbUZRvsK/jCdpQw54p6C9y0p4nZoX9RlX1+hAcZFaEgQflQIzmpXprF2jL6+boMrk5mTnGxD9WKtrD1WI2onhN0Desog3Kl3hqaxlkTVOk6TDv0F//u/SEcxaV9UGsFXe4jsYTubRQtmVGNtimhXYe/Ufg2YufX2Z9Rs2DrL32QPWkTH1V1C/dBQq8nPAjjv8q1HTBJEPc/6NoqQkAhCd8xhKUrzWm1BchrAs76jonpntsBqRL0DRBQTEcVERDERUUxEFBMRxUREMRFRTEQUk4WiZEmjytIlDVn7qbJ07UcWyQx0dnJALhYukhGUIItURPdzHR86OzmwJREVUcJyRBQL4B8/pBxyPw1QHgAAAABJRU5ErkJggg==" InformativeScreenshot="087db443111f9bf0ec982b4013ea8d13.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/Iy6uHYWxQ0WZqPqDy8ZP3g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                        <uix:Target DesignTimeRectangle="1142, 263, 134, 20" ElementType="Text" FriendlyName="'Wed'" FullSelectorArgument="&lt;webctrl aaname='Wed' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Wed' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='DIV' type='' check:text='Wed' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAYCAYAAAAlKWUsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHFSURBVGhD7Zexa8JAFIf774aCQ5YgiJChQYhQBxWCIAW7SQYpRcHBLJbSJWChOFS34iJIliKC/PrucrYBLX1Cp/N9IN67u0zv4713VxAEBiKKwEJEEViIKAILEUVgIaIILEQUgYWIIrCwWJQMSd2BU46xKMZOBYMPvYFsEhbiFYa+Oi/+fAxX+irSTnG/BLcWYfz+mR9eAFZXlEXfo6SGSDIK9imi6zzR4URtAK93FLs9zHVkRPGHtDomFyVCqoLtCtO2S3EF8VIfW4/dreetB5fE6M5ovYzhOQ00binhHZXuFQZVWjen2OnLZ4ii2E7RUtWl/WK+txu7RTHJ9PoLrEcBnOoAqfpX7ShLENJZMFqbyydaT0GaI1H+EMs2LB9mzVxCVWMaOXDvqcnoykLt6FlVG6/QOs6sKDT5xGURxRr0nFKmlkNtpvVETcLMKkGNKss1JX5vLp4rymaMgKqOlu8CsF4UzLqmlRxeMKbKqMG2nlB0gC/KbjNHfENxqYFkk5/bjv2iHIbO79cNKfFQ0fL4j0UlTswovz2PSy785hDzH8usx35RhH9BRBFYiCgCCxFFYCGiCCxEFIGFiCKwEFEEBsAXQrbnkEY2ijoAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                        <uix:Target DesignTimeRectangle="1174, 376, 70, 36" ElementType="InputBox" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' tableCol='6' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/auraIteration/cTimesheetRow/auraIf/uiInputNumber/uiInputSmartNumber/auraHtml:input' type='text' aaname='' tag='INPUT' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAYAAABZ7GwgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIwSURBVGhD7Zq/S+RQEMf9n16VYtuFq80/ECzOxoCFjXY2S65ZrliuOPwD5ECyVWy2i3BoIWupnoWQ+wEBNSBnYJfvvdmXDS9h10xxWdCdD6SYndnifZg3STEbEFiIKCYVUS8vf/H710/c3d7gx831Wj50dnJALmxKUZSgoqfHR0yn0+LX9YPOTg7IhS2rFEUWqUAwkAtyMqcURQbXuZPqkAtyMqcURfdTqGI7EVGvIKKYiCgmIoqJiGIiopiIKCYiislqRE1SnH/10e0oqE4XXi/E3XORq8OoTS+O4H9woJSD7laA8DYvMu2xAlE5xl9cuJ9ipBMdTjKcf3bh7I+QmQKL5tr8agB3M0D8x8TZ9z7czgFGDyZui/ZFZSMcKB9hcbAZeYxAeTi+L+I5jbUZRvsK/jCdpQw54p6C9y0p4nZoX9RlX1+hAcZFaEgQflQIzmpXprF2jL6+boMrk5mTnGxD9WKtrD1WI2onhN0Desog3Kl3hqaxlkTVOk6TDv0F//u/SEcxaV9UGsFXe4jsYTubRQtmVGNtimhXYe/Ufg2YufX2Z9Rs2DrL32QPWkTH1V1C/dBQq8nPAjjv8q1HTBJEPc/6NoqQkAhCd8xhKUrzWm1BchrAs76jonpntsBqRL0DRBQTEcVERDERUUxEFBMRxUREMRFRTEQUk4WiZEmjytIlDVn7qbJ07UcWyQx0dnJALhYukhGUIItURPdzHR86OzmwJREVUcJyRBQL4B8/pBxyPw1QHgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+            </Sequence>
+            <Sequence DisplayName="Ready to Submit" sap:VirtualizedContainerService.HintSize="598,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please verify all hours are correct, then click OK to submit your Time Sheet.&quot;]" />
+              <uix:NGetText DisplayName="Get Text 'Total Hours'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_4" Version="V1">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="tH4kmrvWV0iE1ln3AvU0xQ" DesignTimeRectangle="1608, 428, 27, 23" ElementType="Text" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' type='' aaname='0.00' check:text='0.00' /&gt;" Guid="9d44c0bb-9ced-40bb-9550-50e8ebb6e7bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAbCAYAAACEP1QvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEUSURBVEhL7ZMhbsMwFIZ7J6OC0JwgFwgqSthIy0aijkwD0cBOMOaioLCUlFTdAQYmBVSyVCnSQKRI/+zZa5Kq7TOaK9Ufe3m/3+fEzgQO8XIneLkTvFzTCWzeUoQBAwtCxBnH57fpnUJlLWYN5C12rxGipwqik2XXYPMSYTov0ejAACprN6uXNyUWLAXfm1rRVliyGO9fpv6DylrO6uXbZ/l5cuxMqanBZwzLdWtqA5W1nDWWJxzClBoBnjCkq/FTMms560beXBRI2QOKg6kVv2d35syprOWsXi5vaJVNL9/Qg1wcRMg/1M6JLNnXDOSSrkaRxYN/s0CtFivkzh+Pcsm1rILqS8byf8bLneDlTrhXOfADboxkOKj0tzAAAAAASUVORK5CYII=" InformativeScreenshot="695057d11cef5e59ee8b3dfa0772ee69.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/AcDnPapJFkKHGrtKVFvbyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="325, 421, 1259, 37" ElementType="Text" FriendlyName="'Total Hours'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='TD' type='' aaname='Total Hours:' check:text='Total Hours:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABO8AAAApCAYAAABtGA2SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP5SURBVHhe7d2xaxtnGMDh/k83aTAYDIEMmqKpUIjo0iWCQjN5ipegQhEePCpQvNQEijOEBIwKBReKMgQVF1QIznRDwFAQdBAI3uqkcyIrts+NLfo5PA982KeT5Fejf3yn+yKAazs6OrIsy7oVCwAAuF3EO7gB5/2DbFmWleICAABuF/EOAAAAABIl3gEAAABAosQ7AAAAAEiUeAcAAAAAiRLvAAAAACBR4h0AAAAAJEq8AwAAAIBEiXcAAAAAkCjxDgAAAAASJd4BAAAAQKLEOwAAAABIlHgHAAAAAIkS7wAAAAAgUeIdAAAAALfeybNWZNuD8ujzId4BAAAAsCInsf8giyw7Zz3Yn569zPy1ndflYYWL490F7/O6c4UZ/n/iHQAAAACr924/Wlkr9t+Vx5XEu4J4BwAAAMDqnRfvTvrR/a4R68VOvI1GPPxxEKPJ7MTSjr3ydeM8etsPo7Exf3z9ficOy/p27Xh34SznvPeZzzKITr0b/T93o3W3Np2rHYfjiPygHc3TOe9tRe/K0fIs8Q4AAACA1VuOd5NhdO/VovXzcYyLSPZ3Pzr3smg+zefnz41u4zj+fRD5ePrrZBT9H+pRK6PateJdxSyV8S6rR+PRfhzP5pquUS82s2bsvinOT6c+GU0nn/qrG421reiNZg9fiXgHAAAAwOotx7s/dqJW78awPCyMDjYj+2ovjmdHF0S3BbOoVga4qnj3YRffwjqNdxWzVMe7L2Pv7ezM3Lgf7bV6tH/J5zHwlHgHAAAAQJKW4t1ieHuv2A2XdaLcS/dxvJvkcbhw2exigKuKd5ftvKuapTreLUTJ0vjNi+h8eydq2Xp8s30Y+WLE+w/EOwAAAABWb3nn3atOZMVut4WoNf6tvRDRPo5u+dPm9PxuDE93ri0HuE+Md1WzfEq8e298HHvTv996fiYNXpl4BwAAAMDqLce78SB2iu+Z+2k4vzHEqPieuVpsHpyWuXl02/p19m1xMZ7+GD6pR/aoN3/+OI/D7xs3E+8qZpldQlvvRL84nIxi8KQZtUvj3Sjyt+XnmOQf4p3LZgEAAABI0nK8KxR3eJ1dWppFttGM9rPj+Y0dSicvN+POWnF57Hq0nucR/wxjt3z++v129F52o34T8a5w2SyTPHqPm7M70dbutqL76kV01i6Jd6N+7Hxdvtd09ubj3vyyWfEOAAAAAD4f4h0AAAAAJEq8AwAAAIBEiXcAAAAAkCjxDgAAAAASJd4BAAAAQKLEOwAAAABIlHgHAAAAAIkS7wAAAAAgUeIdAAAAACRKvAMAAACARIl3AAAAAJAo8Q4AAAAAEiXeAQAAAECixDsAAAAASJR4BwAAAABJivgXQR1yMAXdkc8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.Text>
+                  <OutArgument x:TypeArguments="x:String">[totalHours]</OutArgument>
+                </uix:NGetText.Text>
+              </uix:NGetText>
+              <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[weekEnding]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[friHoliday]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Check Box'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NCheck_1" Version="V1">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="uW0AZB5k2ESWoTBfmdw5dQ" DesignTimeRectangle="663, 630, 16, 16" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/lightningInput' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;lightning-input&amp;gt;div&amp;gt;span&amp;gt;label&amp;gt;span' isleaf='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/lightningInput' tag='LIGHTNING-INPUT' /&gt;&lt;webctrl type='' isleaf='1' tag='SPAN' aaname='' check:text='unchecked' /&gt;" Guid="2e577c0d-5ed1-431e-91c5-cf505a662aa5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABWSURBVDhPY/hPZUA7Az99/Pj/wb27/+/evkUSBukB6YUBuIEgiR/fv0N5xAOQHpBeGIAbCLKNXICsd9RA8sCogRAwaiBJAKuBVC8cqF58UQtQ2cD//wGCPSH7F81yYgAAAABJRU5ErkJggg==" InformativeScreenshot="7210c4257b7fcb57bae3749438fc5748.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/yWQzDiYrLkSbZQg18KrQzw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="687, 626, 643, 63" FriendlyName="'By submitting'" FullSelectorArgument="&lt;webctrl idx='2' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='SPAN' aaname=' By submitting the timecard, I certify that I have reported all hours worked during the reporting period. I have reported any questions or issues regarding timesheets to my Manager and/or the Revature Human Resources department. Click  to view Instructions.' check:text='By submitting the timecard, I certify that I have reported all hours worked during the reporting' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheck.Target>
+              </uix:NCheck>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="5kL8f12QAUOrBLc3wds0kw" DesignTimeRectangle="1493, 705, 76, 32" ElementType="Button" FriendlyName="'Submit'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' aaname='Submit' check:text='Submit' /&gt;" Guid="5a824c84-3ed7-4454-a17a-86abcf55a2d2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAkCAYAAAAeor16AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJcSURBVGhD7ZoPb5pAGMb3/b9Xt3VJI1FbberfNUSmVqUiWAWfvY8ISr100mNJu71P8kv07tC7H68ciXyBxioq0DIFgUGwROuuiR/fv+L625XyCnqhH3rKkgtko4q7DHrKJOYCadY0WDFDX0wuUKuvHPTF5AJNg5S3YVSgBYwKtIBRgRYwKtACRgVawHwggR5CbOEPTH3lGQUJ8DJFz9BXFUz1Atsu/LVMPkuyRThum8cWqFZgkT78LWQepr73w1QssIlpJB/2MsOgzvcO7n968C6SogKFdKKx3zf0XWG4X4V3bBssEOfSUoGhHyLepXNK1guM2idjt8+YziMkh/6N72LgBYgPBZ+sZxjW0vHH70rndEx1J4mpvALHK1nNTkQ8PaJ3e1Po/7NAkR946En1OrePWHLhwQhOPlb6ly46IqnhBqC3JJruq915mGAtYsNfpu/6NBUo1LrwniNjFV1SgafV0eL1YBdglI8NMc6OPRtflPR5BebcoDWcIJSJczfsSFtZgddj1uRB2v8nMMWZcFdJF64VeAHD0QRut5let+pdzKL0fowV2JltREiE6YNcG+sdjANZVUGgbAyLIRoyttGR6pVD8w2pAoGbpzt57aD16tr8XpiKBbbhiZTksCsy8elOWutjnt0jcqOZzE4kiBCRu1pRappYNhBuGPtjrQTK+7mcvENiOUlZuw3MX/8J/8swKtACRgVawKhACxgVaAGjAi1gVKAFjAq0gMkF6h/r5Tj7Y10f7SjH2aMd+nDR5dDT2cNFDBtpVkWaoRf6yeQxBYGa8lGBVgF+AyX+8pT7Ob7DAAAAAElFTkSuQmCC" InformativeScreenshot="d3bacc6924f5d1d4720e48a8c09ed5b3.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/LMOeJJ-_1Eirz2kEgEtb-A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1574, 705, 61, 32" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl aaname='Save' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Save' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraIf/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' check:text='Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAAkCAYAAADWzlesAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKVSURBVGhD7ZlNSxtRFIb7Z9y566677Ny56y/IJgSkBLqIhGLoQhdSNyVQQkAkKwUXLYF2IXVRakFQEOOiptkEmhICNTOTmZuY4e175stJtIs2DmhyH7gwc+81zHnmnHOFeQINtAQyJkEpB7/aP9FsXOLH5feZGxKXxCdxxokkyIJs6l1dwXXdYHa2kLgkPokzLiKSIIZkwzwgcUq8IZEEsTOrGTCJxCnxhkQSpGbmiXi8WgLREoiWQLQEoiUQLYHcswQFVVuDsbIAI8OxsgRz+wjXwepDIjEJo28UkM3B7vj3rt2CcxHcPDASkzCopWEUdzEI7scYtmCXszdZkl+H3eX87/cwM2n02/42wSkvwtipQ/5/dbtHsF4/8//mRRrWccebn5bkMuHsDR/2KcydQ6iumnhYlsrxCQaKl24PzrsUjPIJ9/RgbyzAPOj521CHlUvBOuely+uXizA/NDDij7mt6i1h/0tiEoThWRVWIXhz+TX0GxL1beJZM/ycg7H5CUNZuCjByJWojEGfrnvXTmSTwjYp7OP0JZaohBBXsR9sP2ePWIUtL3myHGSEpaMOYWXYS7hP7S3DqNZl1hcV7o0Ns/ZIJHi4rGc+tHXKgPYppFiBCrNe3nLUPxTst9z3tYF+cRn9pjfpZ8Krv/SYKUlOQrsOp9nx6lcYfpHTws8EVWUP2GLKS20zS+zS0lgT9U6WrVWYhepN0F5PSDH9/Z4gjLq9ezlyE5NwfV6BmWdwXtqywxdiPcFmQGGXZ6+wD1j78ZNEMWuyXNtvBRM+3umwEf/NCpy728w/kVwmPCK0BKIlEC2BaAlESyBaAtESyJ0S9McXoj/DEf1BNkAWxJBskpqZtSFxSXxxAcKYhHlFSwDwBzx6tJWq8n2/AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1048" BrowserType="Edge" ContentHash="evuGiSfWBkuJ47d6hfT8wQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZZBSBRRGMdHYolFJCJEJEQkJERCPISHCAlP0qGT5w7RwUNIhESEiAfxGJ46ONIpwmOIiHiQiAiRiOgUb6JTePLQIUQ6TL//25ndt85jXGmc7eDht2/3zbfv+79vvu+9L4jjuKOdnAv4fwUEq+ZCsBp1wmW4BFXN+Wz/hYwAHMkxDs0I431YgHl+TzHe0LNmu6gfrkEfNl1BGJ1KZJOA2q7NAIs9hm8QNzB/GL/CDAzCTZiFDfgMb+ERjEKnu24exwREPfASHMcZDhDzjvHLsfmUXbgHen1d0JugaGWiUxfAw4ssTJjNId99C58GCXwA0/CCNcFG7jawyUYuuQKUbOvgW7AoDCzCdbAiXAEKP+H1/rFoXkG/T8DvxKAMnkHFFXAFlM0+4+IJ7evotQKUFPxQaX2oG5TD3USADf8y/EoelMWTgA8dPiqXI+dBWcxIAPUffXImy2RcAqokRDt2/wO/3Qgw3HJeg7PmKVTSV/AzmSwJ84axzxYAXyqgCvAYFo35zrgEw+m1nZbhMHysGRVIaHS3vMbxCuNzmASVfPNlpAm4hSHGBd0Hob3YuP2MDjj1GDpp865jexqqs5kAdUJSvAd+Bw32YQt2QD3Ce5gDdVRV15mPuoD6hKIRqv+jRGp3+kn9gRJqDIZATvU6vbv1kRHgwiLqZLSbbJXUzo5NGIeK7/+tkC+ATCWR1KjcAXU126BkXYOHoPd7YpjzyBWQghOVqsJ6FVF0vzaT1fO1FOY8WhJwlpwLaLOAuOMveA1Of+TuOKQAAAAASUVORK5CYII=" InformativeScreenshot="25e2fa3172b9672f83b94ea3f886bb72.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw" Selector="&lt;html app='msedge.exe' title='Timesheet'/&gt;" Url="https://rev2.force.com/revature/s/timesheet" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Sequence DisplayName="Send Time Sheet confirmation" sap:VirtualizedContainerService.HintSize="674,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ss:SecureString" Name="emailPassword" />
+        <Variable x:TypeArguments="x:String" Name="emailUserName" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <s:SendSMS sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SendSMS_1" Message="[&quot;Your time sheet has been submitted for the week ending on Friday &quot; + weekEnding + &quot; for &quot; + totalHours + &quot; hours! A confirmation notification has been sent to your Revature email address.&quot;]" PhoneNumber="14013786008" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Automation Email Login" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[emailPassword]" Username="[emailUserName]" />
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Your time sheet has been submitted for the week ending on Friday &quot; + weekEnding + &quot; for &quot; + totalHours + &quot; hours!&quot;]" DisplayName="Send SMTP Mail Message" Email="[emailUserName]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="465" SecureConnection="Auto" SecurePassword="[emailPassword]" Server="p3plcpnl0739.prod.phx3.secureserver.net" Subject="Time Sheet" To="Aaron.Gallaway@Revature.Net">
+        <ui:SendMail.Files>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+        </ui:SendMail.Files>
+      </ui:SendMail>
+    </Sequence>
+  </Sequence>
+</Activity>

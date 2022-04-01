@@ -1,0 +1,13 @@
+﻿{
+  "Id": "yWQzDiYrLkSbZQg18KrQzw",
+  "Reference": "0Bwyp9sYlE6yYvtbTxlVcw/yWQzDiYrLkSbZQg18KrQzw",
+  "ParentRef": "0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw",
+  "Name": "Check Box",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Created": "2022-02-25T17:50:33.0551768Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-02-25T17:50:33.0551768Z"
+}
