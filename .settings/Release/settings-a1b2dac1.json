@@ -1,7 +1,7 @@
 {
   "UiPath.UIAutomationNext.Activities.Generic.DelayAfter": "0.3",
   "UiPath.UIAutomationNext.Activities.Generic.DelayBefore": "0.2",
-  "UiPath.UIAutomationNext.Activities.Generic.Timeout": "30",
+  "UiPath.UIAutomationNext.Activities.Generic.Timeout": "10",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.InteractionMode": "Simulate",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.FullSelector": "False",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.FuzzySelector": "True",
@@ -58,5 +58,10 @@
   "UiPath.UIAutomationNext.Activities.VerifyExecution.Retry": "True",
   "UiPath.UIAutomationNext.Activities.VerifyExecution.VerifyTypedText": "False",
   "UiPath.UIAutomationNext.Activities.VerifyExecution.VerifyActivities": "False",
-  "UiPath.UIAutomationNext.Activities.ApplicationCard.ResizeWindow": "None"
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.ResizeWindow": "None",
+  "UiPath.UIAutomationNext.Activities.Generic.AlterIfDisabled": "False",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.RuntimeBrowser": "None",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.WebDriverMode": "Disabled",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.WebDriverAutoDownload": "True",
+  "UiPath.UIAutomationNext.Activities.Logging.EnableAuditLog": "True"
 }

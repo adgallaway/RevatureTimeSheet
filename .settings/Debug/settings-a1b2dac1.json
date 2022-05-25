@@ -58,5 +58,10 @@
   "UiPath.UIAutomationNext.Activities.VerifyExecution.Retry": "True",
   "UiPath.UIAutomationNext.Activities.VerifyExecution.VerifyTypedText": "False",
   "UiPath.UIAutomationNext.Activities.VerifyExecution.VerifyActivities": "False",
-  "UiPath.UIAutomationNext.Activities.ApplicationCard.ResizeWindow": "None"
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.ResizeWindow": "None",
+  "UiPath.UIAutomationNext.Activities.Generic.AlterIfDisabled": "False",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.RuntimeBrowser": "None",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.WebDriverMode": "Disabled",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.WebDriverAutoDownload": "True",
+  "UiPath.UIAutomationNext.Activities.Logging.EnableAuditLog": "True"
 }

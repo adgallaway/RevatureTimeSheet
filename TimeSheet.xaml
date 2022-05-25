@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TimeSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:SendSMS;assembly=SendSMS" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TimeSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:SendSMS;assembly=SendSMS" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:Send_Automation_Email;assembly=Send Automation Email" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1182,4250</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1182,1976</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TimeSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="43">
+    <scg:List x:TypeArguments="x:String" Capacity="86">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -52,10 +52,11 @@
       <x:String>UiPath.Mail</x:String>
       <x:String>UiPath.Mail.SMTP.Activities</x:String>
       <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>Send_Automation_Email</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -90,9 +91,13 @@
       <AssemblyReference>SendSMS</AssemblyReference>
       <AssemblyReference>UiPath.Twilio.Activities</AssemblyReference>
       <AssemblyReference>UiPath.ContactCenterIntegrations</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Send Automation Email</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TimeSheet" sap:VirtualizedContainerService.HintSize="716,4185" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TimeSheet" sap:VirtualizedContainerService.HintSize="522,1911" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listOfHolidays" />
       <Variable x:TypeArguments="x:String" Name="totalHours" />
@@ -106,10 +111,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="List(Of Holidays)" sap:VirtualizedContainerService.HintSize="674,548" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="List(Of Holidays)" sap:VirtualizedContainerService.HintSize="480,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -122,13 +127,14 @@
       <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_6" Item="12/26/22" />
       <AddToCollection x:TypeArguments="x:String" Collection="[listOfHolidays]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_8" Item="1/2/23" />
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Timesheet" sap:VirtualizedContainerService.HintSize="674,3399" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="DebuggerApi" ScopeGuid="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="480,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// A new browser instance will be opened. The in_Browser arguement is ignored." />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Edge Timesheet" sap:VirtualizedContainerService.HintSize="480,966" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="DebuggerApi" ScopeGuid="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do in Edge 'Timesheet'" sap:VirtualizedContainerService.HintSize="640,3263" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Do in Edge 'Timesheet'" sap:VirtualizedContainerService.HintSize="284,830" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="monHoliday" />
               <Variable x:TypeArguments="x:String" Name="thuHoliday" />
@@ -139,14 +145,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get dates to check if Holiday" sap:VirtualizedContainerService.HintSize="598,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Get dates to check if Holiday" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetText DisplayName="Get Text 'Monday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+              <uix:NGetText DisplayName="Get Text 'Monday'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="KPXlrZlTdk-a-G-uObbEyA" DesignTimeRectangle="882, 283, 53, 20" ElementType="Text" FriendlyName="'Get Text 'Monday''" FullSelectorArgument="&lt;webctrl aaname='02/14/22' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="f0b7cffd-8889-448f-8d54-b65390883d19" InformativeScreenshot="4d59d5cc643d5c309a4d12c062ee389b.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/gBkim1y3tkiv2PIvm74wwQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector">
                     <uix:TargetAnchorable.Anchors>
@@ -161,12 +167,12 @@
                 </uix:NGetText.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Thursday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+              <uix:NGetText DisplayName="Get Text 'Thursday'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="HqRqg71tO0eq7r8v12TzEA" DesignTimeRectangle="1333, 283, 51, 20" ElementType="Text" FriendlyName="'Get Text 'Thursday''" FullSelectorArgument="&lt;webctrl aaname='02/17/22' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="256eb895-f3f8-4408-b89d-2c17ed0969ea" InformativeScreenshot="292848c48448768cbc996a2f2197ac4e.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/SE-sEdE_mES1USicWf3fJQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector">
                     <uix:TargetAnchorable.Anchors>
@@ -181,12 +187,12 @@
                 </uix:NGetText.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Friday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
+              <uix:NGetText DisplayName="Get Text 'Friday'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="AqSwUjL4yEyYlhzZvhQ_uA" DesignTimeRectangle="1483, 283, 53, 20" ElementType="Text" FriendlyName="'Get Text 'Friday''" FullSelectorArgument="&lt;webctrl aaname='02/18/22' sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/uiOutputDate/auraHtml:span' tag='SPAN' type='' /&gt;" Guid="17783f57-218e-4459-9c20-4bd500673066" InformativeScreenshot="7aa8be714485306cefff6be730d22ec2.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/ZvlpukCU802vivb8CA7fEw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector">
                     <uix:TargetAnchorable.Anchors>
@@ -201,39 +207,46 @@
                 </uix:NGetText.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NGetText>
             </Sequence>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each item in List(Of Holidays)" sap:VirtualizedContainerService.HintSize="598,2245" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listOfHolidays]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each item in List(Of Holidays)" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listOfHolidays]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="If day is Holiday" sap:VirtualizedContainerService.HintSize="562,2120" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="If day is Holiday" sap:VirtualizedContainerService.HintSize="242,327" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[monIsHoliday = False]" DisplayName="If - Check if Monday is a Holiday" sap:VirtualizedContainerService.HintSize="520,849" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[monIsHoliday = False]" DisplayName="If - Check if Monday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <If Condition="[monHoliday = item.ToString]" DisplayName="If Monday is a Holiday" sap:VirtualizedContainerService.HintSize="484,661" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[monHoliday = item.ToString]" DisplayName="If Monday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="If True, Then Monday is a Holiday" sap:VirtualizedContainerService.HintSize="376,473" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <Sequence DisplayName="If True, Then Monday is a Holiday" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Monday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_9" Text="0" Version="V1">
@@ -271,20 +284,27 @@
                         </If>
                       </If.Then>
                     </If>
-                    <If Condition="[thuIsHoldiay = False]" DisplayName="If - Check if Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="520,849" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[thuIsHoldiay = False]" DisplayName="If - Check if Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <If Condition="[thuHoliday = item.ToString]" DisplayName="If Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="484,661" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[thuHoliday = item.ToString]" DisplayName="If Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="If True, Then Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="376,473" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence DisplayName="If True, Then Thursday is a Holiday" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Thursday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_10" Text="0" Version="V1">
@@ -332,7 +352,13 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[friIsHoliday = False]" DisplayName="If - Check if Friday is a Holiday" sap:VirtualizedContainerService.HintSize="520,248" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If Condition="[friIsHoliday = False]" DisplayName="If - Check if Friday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
                         <If Condition="[friHoliday = item.ToString]" DisplayName="If Friday is a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_3">
                           <sap:WorkflowViewStateService.ViewState>
@@ -398,19 +424,25 @@
               </ui:ForEach.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:ForEach>
-            <Sequence DisplayName="If not a Holiday, then enter hours" sap:VirtualizedContainerService.HintSize="598,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[monIsHoliday = False]" DisplayName="If - Enter hours if Monday is not a Holiday" sap:VirtualizedContainerService.HintSize="484,404" sap2010:WorkflowViewState.IdRef="If_7">
+            </ui:ForEach>
+            <Sequence DisplayName="If not a Holiday, then enter hours" sap:VirtualizedContainerService.HintSize="242,327" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[monIsHoliday = False]" DisplayName="If - Enter hours if Monday is not a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Monday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_12" Text="8" Version="V1">
                     <uix:NTypeInto.Target>
@@ -435,7 +467,13 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[thuIsHoldiay = False]" DisplayName="If - Enter hours if Thursday is not a Holiday" sap:VirtualizedContainerService.HintSize="484,404" sap2010:WorkflowViewState.IdRef="If_8">
+              <If Condition="[thuIsHoldiay = False]" DisplayName="If - Enter hours if Thursday is not a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Thursday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_13" Text="8" Version="V1">
                     <uix:NTypeInto.Target>
@@ -460,7 +498,13 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[friIsHoliday = False]" DisplayName="If - Enter hours if Friday is not a Holiday" sap:VirtualizedContainerService.HintSize="484,404" sap2010:WorkflowViewState.IdRef="If_9">
+              <If Condition="[friIsHoliday = False]" DisplayName="If - Enter hours if Friday is not a Holiday" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Friday'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_14" Text="8" Version="V1">
                     <uix:NTypeInto.Target>
@@ -486,10 +530,10 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Enter hours for Tuesday &amp; Wednesday" sap:VirtualizedContainerService.HintSize="598,566" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence DisplayName="Enter hours for Tuesday &amp; Wednesday" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -518,7 +562,7 @@
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
             </Sequence>
-            <Sequence DisplayName="Ready to Submit" sap:VirtualizedContainerService.HintSize="598,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="Ready to Submit" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -526,9 +570,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please verify all hours are correct, then click OK to submit your Time Sheet.&quot;]" />
-              <uix:NGetText DisplayName="Get Text 'Total Hours'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_4" Version="V1">
+              <uix:NGetText DisplayName="Get Text 'Total Hours'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="59469022-e0c9-4f4e-b6ed-85489a89667b" Version="V1">
                 <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="tH4kmrvWV0iE1ln3AvU0xQ" DesignTimeRectangle="1608, 428, 27, 23" ElementType="Text" FriendlyName="'0.00'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' type='' aaname='0.00' check:text='0.00' /&gt;" Guid="9d44c0bb-9ced-40bb-9550-50e8ebb6e7bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAbCAYAAACEP1QvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEUSURBVEhL7ZMhbsMwFIZ7J6OC0JwgFwgqSthIy0aijkwD0cBOMOaioLCUlFTdAQYmBVSyVCnSQKRI/+zZa5Kq7TOaK9Ufe3m/3+fEzgQO8XIneLkTvFzTCWzeUoQBAwtCxBnH57fpnUJlLWYN5C12rxGipwqik2XXYPMSYTov0ejAACprN6uXNyUWLAXfm1rRVliyGO9fpv6DylrO6uXbZ/l5cuxMqanBZwzLdWtqA5W1nDWWJxzClBoBnjCkq/FTMms560beXBRI2QOKg6kVv2d35syprOWsXi5vaJVNL9/Qg1wcRMg/1M6JLNnXDOSSrkaRxYN/s0CtFivkzh+Pcsm1rILqS8byf8bLneDlTrhXOfADboxkOKj0tzAAAAAASUVORK5CYII=" InformativeScreenshot="695057d11cef5e59ee8b3dfa0772ee69.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/AcDnPapJFkKHGrtKVFvbyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable BrowserURL="https://rev2.force.com/revature/s/timesheet" ContentHash="cwKiMilxgkuVt53rFpaRCQ" DesignTimeRectangle="1604, 428, 35, 23" ElementType="Text" FriendlyName="'Total Hours'" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/cTimesheetTotalHour:total-hour/uiOutputNumber/auraHtml:span' tag='SPAN' type='' aaname='40.00' /&gt;" Guid="08c57343-7377-48f5-bf99-cdaa7c687d71" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAbCAYAAAD/G5bjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG5SURBVFhH7ZQxa8JAGIb7n27KEBCcM5kpUNAfYECov6HYJXQoHSRCcWmWYoeSof9AB9EpguiUQcgUcAgIb787L03U2CuZHO4BIR/vJff45bvc4YbRcnXRcnXRcnXRcnW5Khd/ujCYh4WsOdl6gkG7AcYYGq0+/Fkikwr2G0weO2jQWta00R9OkRxkxlHlRLVcPIHbsmCV5XYh3KaLYJWKMtvSGtOGvxLlGQnCXgPue4SUb5iRSM+APYqOsTI/cil3iGmhA/+bNi/JRSMLxnO5j8Dm3YHxNEUm619WPiyT7i13YhvAMQeY8sWqXHIhF3+4sEki25XlEky6DO7X2WuceWD3ATayzEloJFgvpLtKHKbwmINgq85zTuXE6yShPV1XyHlzURTMSe5sLjli87Mug1Z5NF/8Gao8p5Djr7NrUyj7elOdE12gk1Px4/9m8WrAGp4OrJjDqplbvsCwfETlmRJzJmdKlUsuD0TOSecIGtiO+cdppYfblIc7uj5sELSN66dRlUv+L0ekyzH6reI7N14eRQXrcSHHSRcYP9jFd+xtcRTJUeXEdbkbQMvVRcvVRcvVRcvVA/gB9IaSWu/QkkQAAAAASUVORK5CYII=" InformativeScreenshot="787f34f54b4a20341e8461b955f1b271.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/AcDnPapJFkKHGrtKVFvbyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Timesheet' /&gt;" SearchSteps="FuzzySelector, Image">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="325, 421, 1259, 37" ElementType="Text" FriendlyName="'Total Hours'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='siteforceBaseApp/siteforceGeneratedpage843816a4A2d04eebB3854796cce1d969C37/cTimesheetApp/auraIf/cTimesheetDetail/auraHtml' tag='TD' type='' aaname='Total Hours:' check:text='Total Hours:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABO8AAAApCAYAAABtGA2SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP5SURBVHhe7d2xaxtnGMDh/k83aTAYDIEMmqKpUIjo0iWCQjN5ipegQhEePCpQvNQEijOEBIwKBReKMgQVF1QIznRDwFAQdBAI3uqkcyIrts+NLfo5PA982KeT5Fejf3yn+yKAazs6OrIsy7oVCwAAuF3EO7gB5/2DbFmWleICAABuF/EOAAAAABIl3gEAAABAosQ7AAAAAEiUeAcAAAAAiRLvAAAAACBR4h0AAAAAJEq8AwAAAIBEiXcAAAAAkCjxDgAAAAASJd4BAAAAQKLEOwAAAABIlHgHAAAAAIkS7wAAAAAgUeIdAAAAALfeybNWZNuD8ujzId4BAAAAsCInsf8giyw7Zz3Yn569zPy1ndflYYWL490F7/O6c4UZ/n/iHQAAAACr924/Wlkr9t+Vx5XEu4J4BwAAAMDqnRfvTvrR/a4R68VOvI1GPPxxEKPJ7MTSjr3ydeM8etsPo7Exf3z9ficOy/p27Xh34SznvPeZzzKITr0b/T93o3W3Np2rHYfjiPygHc3TOe9tRe/K0fIs8Q4AAACA1VuOd5NhdO/VovXzcYyLSPZ3Pzr3smg+zefnz41u4zj+fRD5ePrrZBT9H+pRK6PateJdxSyV8S6rR+PRfhzP5pquUS82s2bsvinOT6c+GU0nn/qrG421reiNZg9fiXgHAAAAwOotx7s/dqJW78awPCyMDjYj+2ovjmdHF0S3BbOoVga4qnj3YRffwjqNdxWzVMe7L2Pv7ezM3Lgf7bV6tH/J5zHwlHgHAAAAQJKW4t1ieHuv2A2XdaLcS/dxvJvkcbhw2exigKuKd5ftvKuapTreLUTJ0vjNi+h8eydq2Xp8s30Y+WLE+w/EOwAAAABWb3nn3atOZMVut4WoNf6tvRDRPo5u+dPm9PxuDE93ri0HuE+Md1WzfEq8e298HHvTv996fiYNXpl4BwAAAMDqLce78SB2iu+Z+2k4vzHEqPieuVpsHpyWuXl02/p19m1xMZ7+GD6pR/aoN3/+OI/D7xs3E+8qZpldQlvvRL84nIxi8KQZtUvj3Sjyt+XnmOQf4p3LZgEAAABI0nK8KxR3eJ1dWppFttGM9rPj+Y0dSicvN+POWnF57Hq0nucR/wxjt3z++v129F52o34T8a5w2SyTPHqPm7M70dbutqL76kV01i6Jd6N+7Hxdvtd09ubj3vyyWfEOAAAAAD4f4h0AAAAAJEq8AwAAAIBEiXcAAAAAkCjxDgAAAAASJd4BAAAAQKLEOwAAAABIlHgHAAAAAIkS7wAAAAAgUeIdAAAAACRKvAMAAACARIl3AAAAAJAo8Q4AAAAAEiXeAQAAAECixDsAAAAASJR4BwAAAABJivgXQR1yMAXdkc8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
@@ -578,24 +622,40 @@
         <uix:TargetApp Area="-1928, -8, 1936, 1048" BrowserType="Edge" ContentHash="evuGiSfWBkuJ47d6hfT8wQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZZBSBRRGMdHYolFJCJEJEQkJERCPISHCAlP0qGT5w7RwUNIhESEiAfxGJ46ONIpwmOIiHiQiAiRiOgUb6JTePLQIUQ6TL//25ndt85jXGmc7eDht2/3zbfv+79vvu+9L4jjuKOdnAv4fwUEq+ZCsBp1wmW4BFXN+Wz/hYwAHMkxDs0I431YgHl+TzHe0LNmu6gfrkEfNl1BGJ1KZJOA2q7NAIs9hm8QNzB/GL/CDAzCTZiFDfgMb+ERjEKnu24exwREPfASHMcZDhDzjvHLsfmUXbgHen1d0JugaGWiUxfAw4ssTJjNId99C58GCXwA0/CCNcFG7jawyUYuuQKUbOvgW7AoDCzCdbAiXAEKP+H1/rFoXkG/T8DvxKAMnkHFFXAFlM0+4+IJ7evotQKUFPxQaX2oG5TD3USADf8y/EoelMWTgA8dPiqXI+dBWcxIAPUffXImy2RcAqokRDt2/wO/3Qgw3HJeg7PmKVTSV/AzmSwJ84axzxYAXyqgCvAYFo35zrgEw+m1nZbhMHysGRVIaHS3vMbxCuNzmASVfPNlpAm4hSHGBd0Hob3YuP2MDjj1GDpp865jexqqs5kAdUJSvAd+Bw32YQt2QD3Ce5gDdVRV15mPuoD6hKIRqv+jRGp3+kn9gRJqDIZATvU6vbv1kRHgwiLqZLSbbJXUzo5NGIeK7/+tkC+ATCWR1KjcAXU126BkXYOHoPd7YpjzyBWQghOVqsJ6FVF0vzaT1fO1FOY8WhJwlpwLaLOAuOMveA1Of+TuOKQAAAAASUVORK5CYII=" InformativeScreenshot="25e2fa3172b9672f83b94ea3f886bb72.png" Reference="0Bwyp9sYlE6yYvtbTxlVcw/BxQemW_qoEeUrc6foXW3nw" Selector="&lt;html app='msedge.exe' title='Timesheet'/&gt;" Url="https://rev2.force.com/revature/s/timesheet" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Sequence DisplayName="Send Time Sheet confirmation" sap:VirtualizedContainerService.HintSize="674,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Send Time Sheet confirmation" sap:VirtualizedContainerService.HintSize="480,593" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="ss:SecureString" Name="emailPassword" />
         <Variable x:TypeArguments="x:String" Name="emailUserName" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <s:SendSMS sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SendSMS_1" Message="[&quot;Your time sheet has been submitted for the week ending on Friday &quot; + weekEnding + &quot; for &quot; + totalHours + &quot; hours! A confirmation notification has been sent to your Revature email address.&quot;]" PhoneNumber="14013786008" />
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Automation Email Login" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[emailPassword]" Username="[emailUserName]" />
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Your time sheet has been submitted for the week ending on Friday &quot; + weekEnding + &quot; for &quot; + totalHours + &quot; hours!&quot;]" DisplayName="Send SMTP Mail Message" Email="[emailUserName]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="465" SecureConnection="Auto" SecurePassword="[emailPassword]" Server="p3plcpnl0739.prod.phx3.secureserver.net" Subject="Time Sheet" To="Aaron.Gallaway@Revature.Net">
-        <ui:SendMail.Files>
-          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-        </ui:SendMail.Files>
-      </ui:SendMail>
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch.Try>
+          <s:SendSMS sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SendSMS_1" Message="[&quot;Your time sheet has been submitted for the week ending on Friday &quot; + weekEnding + &quot; for &quot; + totalHours + &quot; hours! A confirmation notification has been sent to your Revature email address.&quot;]" PhoneNumber="14013786008" />
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s1:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s1:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s1:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Failed to send text message. Twilio account may have expired. Check Twilio account for further information.&quot;]" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="Comment_2" Text="//The Send Email function is a library for simplicity.&#xA;Uses 2 Get Asset activities, a Get Credentials activity, and Send SMTP Mail Message activity." />
+      <s2:SendUiPathAutomatedEmail SendBlindCopyTo="{x:Null}" SendCopyTo="{x:Null}" Body="[&quot;Your time sheet has been submitted for the week ending on Friday &quot; + weekEnding + &quot; for &quot; + totalHours + &quot; hours!&quot;]" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="SendUiPathAutomatedEmail_2" RepyTo="DONOTREPLY@gallaway.us" SendTo="Aaron.Gallaway@Revature.Net" SenderName="DO NOT REPLY" Subject="Time Sheet" />
     </Sequence>
   </Sequence>
 </Activity>
