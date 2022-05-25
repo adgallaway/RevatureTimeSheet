@@ -10,6 +10,7 @@
     Clicks the "...I certify..." check box
     Displays message box advising user to verify hours
     Submits the time sheet
+    Sends submit verification via SMS & Email
     Logs out
     Closes the tab & browser
 
